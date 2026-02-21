@@ -1,0 +1,60 @@
+---
+// Key Benefits Section
+// ------------
+// Description: 4 benefit cards highlighting Apilio's key advantages.
+
+// Components
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import Feature from '../../ui/Feature.astro'
+
+const benefits = [
+	{
+		title: 'Beyond if-then',
+		description:
+			'Combine multiple conditions with AND/OR/NOT logic. "If I\'m home AND it\'s dark AND motion detected" — in a single rule.',
+		icon: 'cube-transparent'
+	},
+	{
+		title: 'All your brands, one brain',
+		description:
+			'Tuya lights, Hue sensors, Tado heating, Alexa routines — controlled together in one automation.',
+		icon: 'rectangle-stack'
+	},
+	{
+		title: 'Timing that actually works',
+		description:
+			'Delay actions by minutes or hours. Schedule with cron precision. Trigger at sunset. Timeout after no motion.',
+		icon: 'bell-alert'
+	},
+	{
+		title: 'No hub, no server',
+		description:
+			'Runs in the cloud. Access from anywhere. Nothing to install, maintain, or update.',
+		icon: 'shield-check'
+	}
+]
+---
+
+<Section>
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">Why <strong>Apilio</strong></h2>
+			<p class="pb-0 text-lg">
+				Not features — pain points solved. Each one is a reason to switch from what you're using now.
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		{
+			benefits.map((benefit) => (
+				<Col span="3" spanMobile="6">
+					<Feature title={benefit.title} icon={benefit.icon} align="center">
+						<p>{benefit.description}</p>
+					</Feature>
+				</Col>
+			))
+		}
+	</Row>
+</Section>

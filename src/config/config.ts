@@ -21,13 +21,13 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Foxi. Tailwind CSS Astro Starter Kit by Oxygenna',
+	siteTitle: 'Apilio — Reliable automation for your smart home',
 	siteDescription:
-		'Foxi is a design and development agency that specializes in creating beautiful and functional websites.',
+		'Connect devices from any brand and build smart home automations that go beyond simple if-then. Complex conditions, delays, cross-brand control. No hub required.',
 	ogImage: '/og.jpg',
 	logo: {
 		src: '/logo.svg',
-		alt: 'Foxi. logo'
+		alt: 'Apilio'
 	},
 	canonical: true,
 	noindex: false,

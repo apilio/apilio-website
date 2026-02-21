@@ -35,13 +35,13 @@ export interface FooterData {
 
 export const footerNavigationData: FooterData = {
 	footerAbout: {
-		title: 'Foxi.',
+		title: 'Apilio',
 		aboutText:
-			'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
+			'Apilio is the logic layer for your smart home. Connect devices from any brand and build automations that go beyond simple if-then.',
 		logo: {
 			src: '/logo.svg',
-			alt: 'The tailwind astro theme',
-			text: 'Foxi.'
+			alt: 'Apilio',
+			text: 'Apilio'
 		}
 	},
 	footerColumns: [
@@ -53,59 +53,47 @@ export const footerNavigationData: FooterData = {
 					subCategoryLink: '/features'
 				},
 				{
-					subCategory: 'FAQ',
-					subCategoryLink: '/faq'
+					subCategory: 'Integrations',
+					subCategoryLink: '/integrations'
 				},
 				{
 					subCategory: 'Pricing',
 					subCategoryLink: '/pricing'
-				},
-				{
-					subCategory: 'Changelog',
-					subCategoryLink: '/changelog'
-				},
-				{
-					subCategory: 'Terms',
-					subCategoryLink: '/terms'
 				}
 			]
 		},
 		{
-			category: 'About us',
+			category: 'Resources',
 			subCategories: [
 				{
-					subCategory: 'About us',
-					subCategoryLink: '/'
+					subCategory: 'Community Forum',
+					subCategoryLink: 'https://community.apilio.com'
 				},
 				{
-					subCategory: 'News',
-					subCategoryLink: '/blog'
+					subCategory: 'Documentation',
+					subCategoryLink: 'https://community.apilio.com/docs'
 				},
 				{
-					subCategory: 'Careers',
-					subCategoryLink: '/blog'
+					subCategory: 'API Docs',
+					subCategoryLink: 'https://documenter.getpostman.com/view/6470083/apilio-api/7TNfX9p'
 				}
 			]
 		},
 		{
-			category: 'Get in touch',
+			category: 'Connect',
 			subCategories: [
 				{
 					subCategory: 'Contact',
-					subCategoryLink: '/contact'
+					subCategoryLink: '/about'
 				},
 				{
-					subCategory: 'Support',
-					subCategoryLink: '/contact'
-				},
-				{
-					subCategory: 'Join us',
-					subCategoryLink: '/contact'
+					subCategory: 'Twitter',
+					subCategoryLink: 'https://twitter.com/apaborern'
 				}
 			]
 		}
 	],
 	subFooter: {
-		copywriteText: '© Foxi 2024.'
+		copywriteText: '© Apilio 2026'
 	}
 }

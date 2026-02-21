@@ -1,29 +1,67 @@
 ---
 // Components
-// - Layout
 import Layout from '../layouts/Layout.astro'
-// - UI
 import Hero from '../components/blocks/hero/HomeCTA.astro'
-import Features from '../components/blocks/features/FeatureCards.astro'
-import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
-import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
+import SocialProof from '../components/blocks/socialproof/Basic.astro'
+import HowItWorks from '../components/blocks/features/HomeHowItWorks.astro'
+import Benefits from '../components/blocks/features/HomeBenefits.astro'
+import HighlightRows from '../components/blocks/highlights/HightlightRows.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 
-// Content
-// - Testimonial background
-import testimonialBackground from '../assets/testimonial-bg-01.webp'
-// - SEO
+// API callout section
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+import Button from '../components/ui/Button.astro'
+import { Image } from 'astro:assets'
+import apiImage from '../assets/webflow/feature-api-webhooks-automation.png'
+
+// SEO
 const SEO = {
-	title: 'Foxi | Your Productivity Toolkit',
+	title: 'Apilio — The logic layer your smart home is missing',
 	description:
-		'Foxi is a powerful productivity toolkit designed to enhance your workflow and boost your productivity. With features like analytics, security, and integrations, Foxi is the perfect solution for your business.'
+		'Connect devices from any brand and build smart home automations that go beyond simple if-then. Complex conditions, delays, cross-brand control. No hub required.'
 }
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero />
-	<Features />
-	<Testimonial bg={testimonialBackground} bgPosition="right" />
-	<HighlightBlocks />
+	<SocialProof />
+	<HowItWorks />
+	<Benefits />
+	<HighlightRows />
+
+	<!-- Section 6: API & Webhooks callout -->
+	<Section>
+		<Row>
+			<Col span="6" classes="relative">
+				<Image
+					src={apiImage}
+					alt="Apilio API and webhooks automation"
+					class="rounded-lg"
+					format="webp"
+				/>
+			</Col>
+			<Col span="6" classes="self-center">
+				<div class="max-w-xl">
+					<h2 class="text-pretty text-2xl lg:text-3xl">Connect <strong>anything</strong></h2>
+					<p class="text-lg leading-relaxed">
+						Full REST API and bidirectional webhooks. Feed in weather data, electricity prices, or
+						CO2 levels. Trigger actions in any service that speaks HTTP. Use iOS Shortcuts, Tasker,
+						Zapier, or your own scripts.
+					</p>
+					<Button
+						size="base"
+						style="primary"
+						variation="outline"
+						link="https://documenter.getpostman.com/view/6470083/apilio-api/7TNfX9p"
+					>
+						View API docs
+					</Button>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+
 	<CTA />
 </Layout>

@@ -1,49 +1,25 @@
 ---
-// Social Proof Section
+// Integration Logos Section
 // ------------
-// Description: A section with logos of social media platforms to enchance the trust of the users.
+// Description: A section with logos of supported integrations.
 
 // Components
-// - Layout
 import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
-// - UI
 import { Image } from 'astro:assets'
 
 // Content
-import airtable from '../../../assets/logos/airtable-logo.svg'
-import asana from '../../../assets/logos/asana-logo.svg'
-import basecamp from '../../../assets/logos/basecamp-logo.svg'
-import evernote from '../../../assets/logos/evernote-logo.svg'
-import notion from '../../../assets/logos/notion-logo.svg'
-import slack from '../../../assets/logos/slack-logo.svg'
+import tuya from '../../../assets/webflow/logo-tuya-smart-life.png'
+import hue from '../../../assets/webflow/logo-philips-hue.png'
+import alexa from '../../../assets/webflow/logo-amazon-alexa.png'
+import ifttt from '../../../assets/webflow/logo-ifttt.svg'
 
 const images = [
-	{
-		image: airtable,
-		alt: 'Airtable logo'
-	},
-	{
-		image: asana,
-		alt: 'Asana logo'
-	},
-	{
-		image: basecamp,
-		alt: 'Basecamp logo'
-	},
-	{
-		image: evernote,
-		alt: 'Evernote logo'
-	},
-	{
-		image: notion,
-		alt: 'Notion logo'
-	},
-	{
-		image: slack,
-		alt: 'Slack logo'
-	}
+	{ image: tuya, alt: 'Tuya / Smart Life logo' },
+	{ image: hue, alt: 'Philips Hue logo' },
+	{ image: alexa, alt: 'Amazon Alexa logo' },
+	{ image: ifttt, alt: 'IFTTT logo' }
 ]
 
 // Props
@@ -57,15 +33,19 @@ const { classes } = Astro.props
 	<Row>
 		<Col span="12" align="center">
 			<h2 class="!mb-6 text-base font-normal text-neutral-400 dark:text-neutral-600">
-				Trusted by <strong class="highlight">50,000+</strong> businesses
-			</h2></Col
-		>
+				Works with <strong class="highlight">600+ brands</strong> via IFTTT
+			</h2>
+		</Col>
 	</Row>
 	<Row flex classes="!flex-row">
 		{
 			images.map((item) => (
-				<Col>
-					<Image src={item.image} alt={item.alt} />
+				<Col classes="flex items-center justify-center px-4">
+					<Image
+						src={item.image}
+						alt={item.alt}
+						class="h-10 w-auto object-contain opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0 dark:brightness-200 dark:hover:brightness-100"
+					/>
 				</Col>
 			))
 		}

@@ -1,0 +1,59 @@
+---
+// How It Works Section
+// ------------
+// Description: 3-step overview of how Apilio works.
+
+// Components
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import Feature from '../../ui/Feature.astro'
+
+const steps = [
+	{
+		title: 'Connect your devices',
+		description:
+			'Link your Tuya, Hue, Sonoff, Tado, or Alexa accounts. Devices import automatically.',
+		icon: 'bolt'
+	},
+	{
+		title: 'Build your logic',
+		description:
+			'Combine conditions — time, location, sensors, device states — into powerful automation rules.',
+		icon: 'squares-plus'
+	},
+	{
+		title: 'Let it run',
+		description:
+			'Apilio runs in the cloud 24/7. No hub, no maintenance. Set it and forget it.',
+		icon: 'arrow-path-rounded-square'
+	}
+]
+---
+
+<Section id="how-it-works">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">How it <strong>works</strong></h2>
+			<p class="pb-0 text-lg">
+				Get started in minutes. No hardware to install, no servers to maintain.
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		{
+			steps.map((step, index) => (
+				<Col span="4" align="center">
+					<div class="flex flex-col items-center text-center">
+						<div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-500 text-xl font-bold text-white">
+							{index + 1}
+						</div>
+						<Feature title={step.title} icon={step.icon} align="center">
+							<p>{step.description}</p>
+						</Feature>
+					</div>
+				</Col>
+			))
+		}
+	</Row>
+</Section>
