@@ -14,18 +14,12 @@ import { Image } from 'astro:assets'
 // Assets
 import teamPhoto from '../assets/webflow/photo-winterthur-graffiti.jpg'
 import devicesImage from '../assets/webflow/illustration-device-avatars-integrations.png'
-import zhawLogo from '../assets/webflow/logo-zhaw-runway-incubator.png'
-import technoparkLogo from '../assets/webflow/logo-technopark-winterthur.png'
 import photoPhilipp from '../assets/webflow/team-philipp-ebneter.png'
 import photoDan from '../assets/webflow/team-dan-turner.png'
-import photoAnna from '../assets/webflow/team-anna-pena-martinez.png'
-import photoCristovao from '../assets/webflow/team-cristovao-alves.png'
 
 const team = [
 	{ name: 'Philipp Ebneter', photo: photoPhilipp },
-	{ name: 'Dan Turner', photo: photoDan },
-	{ name: 'Anna Pe\u00f1a Martinez', photo: photoAnna },
-	{ name: 'Cristov\u00e3o Alves', photo: photoCristovao }
+	{ name: 'Dan Turner', photo: photoDan }
 ]
 
 // SEO
@@ -59,7 +53,7 @@ const SEO = {
 				<h2 class="text-pretty">The <strong>team</strong></h2>
 			</Col>
 		</Row>
-		<Row>
+		<Row flex>
 			{
 				team.map((member) => (
 					<Col span="3" align="center">
@@ -155,21 +149,8 @@ const SEO = {
 				<div class="max-w-xl">
 					<h2 class="text-pretty text-2xl lg:text-3xl">Based in <strong>Winterthur</strong>, Switzerland</h2>
 					<p class="text-lg leading-relaxed">
-						Apilio is a small, independent team. We started as part of the ZHAW Runway Incubator
-						and are based at Technopark Winterthur.
+						Apilio is a small, independent team located in Switzerland and the UK. We started as part of the ZHAW Runway Incubator.
 					</p>
-					<div class="mt-6 flex items-center gap-8">
-						<Image
-							src={zhawLogo}
-							alt="ZHAW Runway Incubator"
-							class="h-10 w-auto object-contain opacity-60 grayscale dark:brightness-200"
-						/>
-						<Image
-							src={technoparkLogo}
-							alt="Technopark Winterthur"
-							class="h-10 w-auto object-contain opacity-60 grayscale dark:brightness-200"
-						/>
-					</div>
 				</div>
 			</Col>
 		</Row>

@@ -33,7 +33,7 @@ export interface NavData {
 
 export const navigationBarData: NavData = {
 	logo: {
-		src: '/logo.svg',
+		src: '/logo-full.png',
 		alt: 'Apilio',
 		text: 'Apilio'
 	},
@@ -44,5 +44,5 @@ export const navigationBarData: NavData = {
 		{ name: 'Pricing', link: '/pricing' },
 		{ name: 'About', link: '/about' }
 	],
-	navActions: [{ name: 'Start free trial', link: 'https://app.apilio.com/signup', style: 'primary', size: 'lg' }]
+	navActions: [{ name: 'Log in', link: 'https://app.apilio.com/redirect_to_auth0', style: 'primary', size: 'lg' }]
 }

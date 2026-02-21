@@ -39,7 +39,7 @@ export const footerNavigationData: FooterData = {
 		aboutText:
 			'Apilio is the logic layer for your smart home. Connect devices from any brand and build automations that go beyond simple if-then.',
 		logo: {
-			src: '/logo.svg',
+			src: '/logo-full.png',
 			alt: 'Apilio',
 			text: 'Apilio'
 		}

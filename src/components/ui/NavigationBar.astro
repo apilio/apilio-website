@@ -40,8 +40,7 @@ const savedNavActions = navActions.map((action) => ({
 		<nav aria-label="main navigation" role="navigation" class="header__nav">
 			<!-- Logo -->
 			<a href="/" class="header__logo">
-				<img src={logo.src} alt={logo.alt} width="48" height="48" class="dark:invert" />
-				<span>{logo.text}</span>
+				<img src={logo.src} alt={logo.alt} class="h-14 w-auto dark:invert" />
 			</a>
 
 			<!-- Menu toggle -->
@@ -107,7 +106,7 @@ const savedNavActions = navActions.map((action) => ({
 			<div class="header__actions">
 				{
 					savedNavActions.map((action) => (
-						<Button classes="flex-auto" size={action.size} style={action.style} modal="signup">
+						<Button classes="flex-auto" size={action.size} style={action.style} link={action.link}>
 							{action.name}
 						</Button>
 					))
@@ -128,7 +127,7 @@ const savedNavActions = navActions.map((action) => ({
 		@apply container relative mx-auto px-6;
 	}
 	.header__logo {
-		@apply flex flex-auto items-center gap-2 whitespace-nowrap py-3 font-logo text-2xl font-light uppercase tracking-[0.25em] focus:outline-none;
+		@apply flex flex-auto items-center py-3 focus:outline-none;
 	}
 	.header__nav {
 		@apply flex h-[5.5rem] items-stretch gap-6 font-medium text-neutral-700 lg:justify-between dark:text-neutral-50;
