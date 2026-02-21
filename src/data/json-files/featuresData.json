@@ -7,7 +7,7 @@
 	},
 	{
 		"title": "Complex conditions",
-		"icon": "arrow-path-rounded-square",
+		"icon": "variable",
 		"description": "Combine multiple conditions with AND, OR, and NOT logic. \"If I'm home AND it's after sunset AND the front door sensor triggered\" — one rule, not three.",
 		"category": "Automation Logic"
 	},
@@ -19,25 +19,25 @@
 	},
 	{
 		"title": "Multiple actions",
-		"icon": "rocket",
+		"icon": "numbered-list",
 		"description": "One rule can control several devices and services at once. Turn on the lights, adjust the thermostat, and send a notification — all from one trigger.",
 		"category": "Automation Logic"
 	},
 	{
 		"title": "Condition sources",
-		"icon": "squares-plus",
+		"icon": "funnel",
 		"description": "Build conditions from time, location, device states, sensor data, IFTTT triggers, Tuya events, or webhook inputs. Mix and match freely.",
 		"category": "Automation Logic"
 	},
 	{
 		"title": "Action delays",
-		"icon": "scale",
+		"icon": "clock",
 		"description": "Delay individual actions within a logicblock. \"Turn on lights now, close blinds in 30 minutes, adjust thermostat in 1 hour\" — all from one trigger.",
 		"category": "Timing & Delays"
 	},
 	{
 		"title": "Cron expressions",
-		"icon": "clipboard-document-list",
+		"icon": "code-bracket-square",
 		"description": "Schedule logicblock evaluations with cron precision. Every 5 minutes, every weekday at 7am, the first Monday of each month — whatever you need.",
 		"category": "Timing & Delays"
 	},
@@ -49,25 +49,25 @@
 	},
 	{
 		"title": "Timeouts",
-		"icon": "shield-check",
+		"icon": "arrow-uturn-left",
 		"description": "Reset a condition after a set period. If your motion sensor doesn't report \"no motion\" reliably, a timeout handles it. Prevents false triggers from flaky sensors.",
 		"category": "Timing & Delays"
 	},
 	{
 		"title": "Time windows",
-		"icon": "eye",
+		"icon": "calendar-days",
 		"description": "Restrict when automations are active. \"Only on weekdays\", \"only between 22:00 and 06:00\", \"not on holidays\".",
 		"category": "Timing & Delays"
 	},
 	{
 		"title": "Auto-import",
-		"icon": "arrow-trending-up",
+		"icon": "cloud-arrow-down",
 		"description": "Connect your Tuya, Hue, Sonoff, or Tado account and your devices appear automatically. Real-time status updates, no manual configuration.",
 		"category": "Devices"
 	},
 	{
 		"title": "Custom devices",
-		"icon": "light-bulb",
+		"icon": "wrench-screwdriver",
 		"description": "Create your own virtual devices with boolean, string, or numeric attributes. Track states like \"vacation mode\", \"guest count\", or \"last watered\".",
 		"category": "Devices"
 	},
@@ -79,19 +79,19 @@
 	},
 	{
 		"title": "Tagging & grouping",
-		"icon": "identification",
+		"icon": "tag",
 		"description": "Tag devices, logicblocks, and variables. Filter your dashboard by tag. Manage a whole room or project as a unit.",
 		"category": "Devices"
 	},
 	{
 		"title": "Broad compatibility",
-		"icon": "check-circle",
+		"icon": "link",
 		"description": "Tuya covers thousands of white-label products. Sonoff/eWeLink covers WiFi and Zigbee. Hue for lighting. Tado for heating. Alexa for routines. IFTTT for 600+ more brands.",
 		"category": "Devices"
 	},
 	{
 		"title": "Normal mode",
-		"icon": "check-circle",
+		"icon": "play-circle",
 		"description": "The default. Conditions met → actions run. Fully automatic, no intervention needed.",
 		"category": "Execution Modes"
 	},
@@ -109,13 +109,13 @@
 	},
 	{
 		"title": "Override",
-		"icon": "shield-check",
+		"icon": "pause-circle",
 		"description": "Temporarily disable automations. Hosting a party? One toggle pauses all your lighting routines until you re-enable them.",
 		"category": "Execution Modes"
 	},
 	{
 		"title": "Event log",
-		"icon": "clipboard-document-list",
+		"icon": "document-text",
 		"description": "See every trigger, condition evaluation, and action execution in real time. Understand exactly what happened and when.",
 		"category": "Monitoring & Notifications"
 	},
@@ -127,7 +127,7 @@
 	},
 	{
 		"title": "Email notifications",
-		"icon": "bell",
+		"icon": "envelope",
 		"description": "Get notified when specific logicblocks fire or conditions change. Up to 300 emails/month on higher plans.",
 		"category": "Monitoring & Notifications"
 	},
@@ -145,32 +145,20 @@
 	},
 	{
 		"title": "REST API",
-		"icon": "cube-transparent",
+		"icon": "code-bracket",
 		"description": "Full JSON API. Read and write variables, query condition states, trigger logicblock evaluations. Token-based authentication. Documented on Postman.",
 		"category": "REST API & Webhooks"
 	},
 	{
 		"title": "Incoming webhooks",
-		"icon": "arrow-trending-up",
+		"icon": "inbox-arrow-down",
 		"description": "Every variable and logicblock gets its own unique URL. Update values, trigger evaluations, activate or deactivate logicblocks — from any external system.",
 		"category": "REST API & Webhooks"
 	},
 	{
 		"title": "Outgoing webhooks",
-		"icon": "rocket",
+		"icon": "arrow-up-tray",
 		"description": "When actions fire, Apilio can send HTTP requests to any URL. Custom headers, body, and authorization. Variable values injected into requests.",
-		"category": "REST API & Webhooks"
-	},
-	{
-		"title": "Extensibility",
-		"icon": "key",
-		"description": "Works with iOS Shortcuts (Siri), Tasker, Zapier, Locative, Life360, Node-RED, Home Assistant, or anything that can make an HTTP request.",
-		"category": "REST API & Webhooks"
-	},
-	{
-		"title": "Real-world uses",
-		"icon": "phone-arrow-up-right",
-		"description": "SMS via ClickSend, smart locks via Nuki, push via Pushover, voice queries via Siri Shortcuts, Android automation via Tasker.",
 		"category": "REST API & Webhooks"
 	}
 ]

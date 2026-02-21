@@ -8,24 +8,31 @@ import Row from '../components/ui/Row.astro'
 import Col from '../components/ui/Col.astro'
 import Button from '../components/ui/Button.astro'
 import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
 
 // Assets — Native integration logos
-import tuya from '../assets/webflow/logo-tuya-smart-life.png'
-import hue from '../assets/webflow/logo-philips-hue.png'
-import ewelink from '../assets/logos/logo-ewelink.png'
+import tuya from '../assets/logos/logo-tuya.svg'
+import hue from '../assets/logos/logo-philips-hue.svg'
+import ewelink from '../assets/logos/logo-ewelink.svg'
 import tado from '../assets/logos/logo-tado.svg'
-import alexa from '../assets/webflow/logo-amazon-alexa.png'
+import alexa from '../assets/logos/logo-amazon-alexa.svg'
 import ifttt from '../assets/webflow/logo-ifttt.svg'
 
 // Assets — IFTTT brands
-import google from '../assets/webflow/logo-google-assistant.png'
-import netatmo from '../assets/webflow/logo-netatmo.png'
-import smartthings from '../assets/webflow/logo-smartthings-samsung.jpg'
-import lifx from '../assets/webflow/logo-lifx.png'
+import smartthings from '../assets/logos/logo-smartthings.svg'
+import lifx from '../assets/logos/logo-lifx.svg'
+import ring from '../assets/logos/logo-ring.svg'
+import tplink from '../assets/logos/logo-tp-link.svg'
+import bosch from '../assets/logos/logo-bosch.svg'
+import netatmo from '../assets/logos/logo-netatmo.svg'
+
+// Assets — Webhook services
+import zapier from '../assets/logos/logo-zapier.svg'
+import apple from '../assets/logos/logo-apple.svg'
 
 // Assets — Images
-import apiImage from '../assets/webflow/feature-api-webhooks-automation.png'
-import matterImage from '../assets/webflow/illustration-matter-protocol.png'
+import zigbeeLogo from '../assets/logos/logo-zigbee.svg'
+import matterLogo from '../assets/logos/logo-matter.svg'
 
 // SEO
 const SEO = {
@@ -75,10 +82,12 @@ const nativeIntegrations = [
 ]
 
 const iftttBrands = [
-	{ image: google, alt: 'Google Assistant' },
-	{ image: netatmo, alt: 'Netatmo' },
-	{ image: smartthings, alt: 'SmartThings' },
-	{ image: lifx, alt: 'LIFX' }
+	{ image: smartthings, alt: 'Samsung SmartThings', class: 'h-14' },
+	{ image: lifx, alt: 'LIFX', class: 'h-14' },
+	{ image: ring, alt: 'Ring', class: 'h-10' },
+	{ image: tplink, alt: 'TP-Link / Kasa', class: 'h-10' },
+	{ image: bosch, alt: 'Bosch Smart Home', class: 'h-10' },
+	{ image: netatmo, alt: 'Netatmo', class: 'h-10' }
 ]
 ---
 
@@ -101,8 +110,8 @@ const iftttBrands = [
 		<Row>
 			{
 				nativeIntegrations.map((integration) => (
-					<Col span="4" spanMobile="6">
-						<div class="flex flex-col items-center rounded-lg border border-neutral-100 p-6 text-center dark:border-neutral-800">
+					<Col span="4" spanMobile="6" classes="flex">
+						<div class="flex w-full flex-col items-center rounded-lg border border-neutral-100 p-6 text-center dark:border-neutral-800">
 							<Image
 								src={integration.logo}
 								alt={integration.name}
@@ -120,13 +129,27 @@ const iftttBrands = [
 	<!-- Webhooks & API -->
 	<Section classes="bg-neutral-50 dark:bg-neutral-900">
 		<Row>
-			<Col span="6" classes="relative">
-				<Image
-					src={apiImage}
-					alt="Apilio API and webhooks"
-					class="rounded-lg"
-					format="webp"
-				/>
+			<Col span="6" classes="flex items-center justify-center">
+				<div class="grid grid-cols-2 gap-x-16 gap-y-10">
+					<!-- Generic concept icons -->
+					<div class="flex flex-col items-center gap-2">
+						<Icon name="code-bracket" class="h-12 w-12 text-neutral-700 dark:text-neutral-300" />
+						<span class="text-sm text-neutral-400">REST API</span>
+					</div>
+					<div class="flex flex-col items-center gap-2">
+						<Icon name="bolt" class="h-12 w-12 text-neutral-700 dark:text-neutral-300" />
+						<span class="text-sm text-neutral-400">Webhooks</span>
+					</div>
+					<!-- Brand logos -->
+					<div class="flex flex-col items-center gap-2">
+						<Image src={zapier} alt="Zapier" class="h-12 w-auto object-contain dark:brightness-200" />
+						<span class="text-sm text-neutral-400">Zapier</span>
+					</div>
+					<div class="flex flex-col items-center gap-2">
+						<Image src={apple} alt="iOS Shortcuts" class="h-12 w-auto object-contain dark:brightness-200" />
+						<span class="text-sm text-neutral-400">iOS Shortcuts</span>
+					</div>
+				</div>
 			</Col>
 			<Col span="6" classes="self-center">
 				<div class="max-w-xl">
@@ -173,7 +196,7 @@ const iftttBrands = [
 							<Image
 								src={brand.image}
 								alt={brand.alt}
-								class="h-10 w-auto object-contain opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0 dark:brightness-200 dark:hover:brightness-100"
+								class={`${brand.class} w-auto object-contain opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0 dark:brightness-200 dark:hover:brightness-100`}
 							/>
 						))
 					}
@@ -182,24 +205,36 @@ const iftttBrands = [
 		</Row>
 	</Section>
 
-	<!-- Coming soon: Matter -->
+	<!-- Even more devices via hubs -->
 	<Section padding="bottom">
 		<Row>
-			<Col span="6" classes={`self-center`}>
+			<Col span="6" classes="self-center">
 				<div class="max-w-xl">
-					<h2 class="text-pretty text-2xl lg:text-3xl">Coming soon: <strong>Matter</strong></h2>
+					<h2 class="text-pretty text-2xl lg:text-3xl">Even more devices through <strong>hubs</strong></h2>
 					<p class="text-lg leading-relaxed">
-						Matter protocol support is in development. One standard to connect them all.
+						If you have a Tuya or eWeLink hub, you can connect Matter or Zigbee compatible devices of virtually any brand — as long as they follow the standards. Through a hub, the number of devices you can control with Apilio grows dramatically.
 					</p>
 				</div>
 			</Col>
-			<Col span="6" classes="relative">
-				<Image
-					src={matterImage}
-					alt="Matter protocol illustration"
-					class="rounded-lg"
-					format="webp"
-				/>
+			<Col span="6" classes="flex items-center justify-center">
+				<div class="flex items-center gap-12">
+					<div class="text-center">
+						<Image
+							src={zigbeeLogo}
+							alt="Zigbee"
+							class="mx-auto h-20 w-20 object-contain dark:brightness-200"
+						/>
+						<p class="mt-3 font-medium text-neutral-500 dark:text-neutral-400">Zigbee</p>
+					</div>
+					<div class="text-center">
+						<Image
+							src={matterLogo}
+							alt="Matter"
+							class="mx-auto h-20 w-20 object-contain dark:brightness-200"
+						/>
+						<p class="mt-3 font-medium text-neutral-500 dark:text-neutral-400">Matter</p>
+					</div>
+				</div>
 			</Col>
 		</Row>
 	</Section>
