@@ -76,6 +76,14 @@ export const footerNavigationData: FooterData = {
 				{
 					subCategory: 'API Docs',
 					subCategoryLink: 'https://documenter.getpostman.com/view/6470083/apilio-api/7TNfX9p'
+				},
+				{
+					subCategory: 'Terms & Conditions',
+					subCategoryLink: '/terms'
+				},
+				{
+					subCategory: 'Privacy Policy',
+					subCategoryLink: '/privacy'
 				}
 			]
 		},

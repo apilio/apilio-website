@@ -1,170 +1,265 @@
 ---
-// Components
-// - Layout
 import Layout from '../layouts/Layout.astro'
-// - UI
-import SidebarContent from '../components/blocks/basic/StickySidebar.astro'
 import Hero from '../components/blocks/hero/PageHeader.astro'
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
 
-// Content
-// - SEO
 const SEO = {
-	title: 'Foxi | Terms of Service',
+	title: 'Apilio | Terms and Conditions',
 	description:
-		"Foxi's terms of service outlines the rules and regulations that govern your use of our services. Please read them carefully to understand your rights and responsibilities."
+		'Terms and Conditions for using Apilio services. Please read these terms carefully before using the service.'
 }
-// - Page Header
 const header = {
-	title: 'Terms and Conditions: Read, Relax, <strong>Enjoy!</strong>',
-	text: 'Please read them carefully to understand your rights and responsibilities.'
+	title: 'Terms and <strong>Conditions</strong>',
+	text: 'Please read these Terms and Conditions carefully before using Apilio services.'
 }
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero title={header.title} text={header.text} />
-	<SidebarContent>
-		<div slot="sidebar">
-			<h3>Introduction</h3>
-			<p>
-				Please take a moment to read through these terms to understand your rights and
-				responsibilities while using our services.
-			</p>
-		</div>
-		<div class="basic-text">
-			<h4>Welcome to Foxi</h4>
-			<p>
-				Welcome to Foxi! We’re thrilled to have you on board. Our services are designed to help you
-				stay organized, communicate effectively, and boost your productivity. By using Foxi, you are
-				agreeing to these terms and conditions, so please read them carefully.
-			</p>
-			<p>
-				Your satisfaction is important to us. If you have any questions or concerns about these
-				terms, please do not hesitate to contact us. Our team is here to assist you and ensure you
-				have a great experience with Foxi.
-			</p>
+	<Section>
+		<Row>
+			<Col span="2" />
+			<Col span="8">
+				<div class="basic-text">
+					<p><em>Last updated: May 13, 2019</em></p>
 
-			<h4>Acceptance of Terms</h4>
-			<p>
-				By accessing or using our services, you agree to comply with and be bound by these Terms of
-				Service and our Privacy Policy. If you do not agree with any part of these terms, you must
-				not use our services. Your continued use of Foxi signifies your acceptance of these terms.
-			</p>
-			<p>
-				We reserve the right to modify these terms at any time. We will notify you of any changes by
-				posting the new terms on our website. It is your responsibility to review these terms
-				periodically. Continued use of the service after any changes means you accept the new terms.
-			</p>
+					<p>
+						Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before
+						using Apilio services (the "Service") operated by Apilio Ltd. ("us", "we", or "our").
+						Your access to and use of the Service is conditioned on your acceptance of and compliance
+						with these Terms.
+					</p>
+					<p>
+						These Terms apply to all visitors, users and others who access or use the Service. By
+						accessing or using the Service, you agree to be bound by these Terms. If you disagree with
+						any part of the terms then you may not access the Service.
+					</p>
 
-			<h4>Our Commitment to You</h4>
-			<p>
-				At Foxi, we are committed to providing you with reliable, high-quality services. Our goal is
-				to help you achieve your productivity and organizational objectives with ease. We
-				continuously work to improve our services and provide you with the best possible experience.
-			</p>
-			<p>
-				We value your feedback and suggestions. Please feel free to reach out to us with any
-				comments or ideas on how we can serve you better. Your input helps us enhance Foxi and meet
-				your
-			</p>
-		</div>
-	</SidebarContent>
-	<SidebarContent classes="bg-neutral-50 dark:bg-neutral-900">
-		<div slot="sidebar">
-			<h3>User Accounts</h3>
-			<p>
-				This section explains the requirements and responsibilities associated with creating and
-				maintaining a user account on Foxi. Please ensure you understand and comply with these
-				guidelines to use our services effectively.
-			</p>
-		</div>
-		<div class="basic-text">
-			<h4>Registration</h4>
-			<p>
-				To access certain features of Foxi, you must create a user account. During registration, you
-				agree to provide accurate and complete information. This information helps us serve you
-				better and ensures the security and functionality of your account.
-			</p>
-			<p>
-				By registering, you also agree to keep your information up-to-date. Inaccurate or outdated
-				information can lead to issues with your account and may affect your ability to use certain
-				features of Foxi.
-			</p>
+					<h4>Subscription</h4>
+					<p>
+						Some parts of the Service may be billed on a subscription basis
+						("Subscription(s)"). You will be billed in advance on a recurring and periodic basis
+						("Billing Cycle"). Billing cycles are set either on a monthly or annual basis, depending
+						on the type of subscription plan you select when purchasing a Subscription. At the end of
+						each Billing Cycle, your Subscription will automatically renew unless you cancel it or
+						Apilio Ltd. cancels it. You may cancel your Subscription renewal either through your
+						online account management page or by contacting Apilio Ltd. customer support team.
+					</p>
+					<p>
+						A valid payment method is required to process the payment for your Subscription. You shall
+						provide Apilio Ltd. with accurate and complete billing information including full name,
+						address, state, zip code, telephone number, and a valid payment method information. By
+						submitting such payment information, you automatically authorize Apilio Ltd. to charge all
+						Subscription fees incurred through your account to any such payment instruments.
+					</p>
+					<p>
+						Should automatic billing fail to occur for any reason, Apilio Ltd. will issue an
+						electronic invoice indicating that you must proceed manually, within a certain deadline
+						date, with the full payment corresponding to the billing period as indicated on the
+						invoice.
+					</p>
 
-			<h4>Account Security</h4>
-			<p>
-				Maintaining the security of your account is your responsibility. You agree to keep your
-				password confidential and not share it with anyone. If you suspect any unauthorized use of
-				your account, you must notify us immediately.
-			</p>
-			<p>
-				We recommend using a strong and unique password for your Foxi account. Regularly updating
-				your password and using two-factor authentication, if available, can further enhance the
-				security of your account.
-			</p>
+					<h4>Free Trial</h4>
+					<p>
+						Apilio Ltd. may, at its sole discretion, offer a Subscription with a free trial for a
+						limited period of time ("Free Trial"). You may be required to enter your billing
+						information in order to sign up for the Free Trial. If you do enter your billing
+						information when signing up for the Free Trial, you will not be charged by Apilio Ltd.
+						until the Free Trial has expired. On the last day of the Free Trial period, unless you
+						cancelled your Subscription, you will be automatically charged the applicable Subscription
+						fees for the type of Subscription you have selected. At any time and without notice,
+						Apilio Ltd. reserves the right to (i) modify the terms and conditions of the Free Trial
+						offer, or (ii) cancel such Free Trial offer.
+					</p>
 
-			<h4>Account Usage</h4>
-			<p>
-				As the account holder, you are responsible for all activities that occur under your account.
-				This includes any actions taken by others who may have access to your account. Ensure that
-				you monitor and manage your account usage appropriately.
-			</p>
-			<p>
-				If we detect any suspicious or unauthorized activities, we may take actions to protect your
-				account, including temporarily suspending access or requiring additional verification steps.
-				Our goal is to safeguard your account and personal information.
-			</p>
-		</div>
-	</SidebarContent>
-	<SidebarContent>
-		<div slot="sidebar">
-			<h3>Limitation of Liability</h3>
-			<p>
-				This section outlines the limitations of our liability regarding the use of Foxi services.
-				Understanding these limitations helps you know the extent of our responsibilities and your
-				rights.
-			</p>
-		</div>
-		<div class="basic-text">
-			<h4>General Limitations</h4>
-			<p>
-				Foxi is provided on an "as is" and "as available" basis. We do not warrant that the service
-				will be uninterrupted, error-free, or completely secure. We disclaim all warranties, whether
-				express or implied, including but not limited to the implied warranties of merchantability,
-				fitness for a particular purpose, and non-infringement.
-			</p>
-			<p>
-				We are not liable for any damages resulting from the use or inability to use our services,
-				including but not limited to direct, indirect, incidental, special, consequential, or
-				punitive damages. This includes damages for loss of profits, data, or other intangibles.
-			</p>
+					<h4>Fee Changes</h4>
+					<p>
+						Apilio Ltd., at its sole discretion and at any time, may modify the Subscription fees for
+						the Subscriptions. Any Subscription fee change will become effective at the end of the
+						then-current Billing Cycle. Apilio Ltd. will provide you with reasonable prior notice of
+						any change in Subscription fees to give you an opportunity to terminate your Subscription
+						before such change becomes effective. Your continued use of the Service after the
+						Subscription fee change comes into effect constitutes your agreement to pay the modified
+						Subscription fee amount.
+					</p>
 
-			<h4>Third-Party Services</h4>
-			<p>
-				Foxi may include links to third-party websites or services that are not owned or controlled
-				by us. We do not endorse or assume any responsibility for any such third-party sites,
-				information, materials, products, or services. Accessing and using these third-party
-				services is at your own risk.
-			</p>
-			<p>
-				We are not liable for any loss or damage incurred as a result of any dealings with
-				third-party websites or services, including the sharing of your information with such third
-				parties. It is your responsibility to review the terms and conditions and privacy policies
-				of any third-party websites or services you use.
-			</p>
+					<h4>Refunds</h4>
+					<p>Except when required by law, paid Subscription fees are non-refundable.</p>
 
-			<h4>Maximum Liability</h4>
-			<p>
-				In no event shall our total liability to you for all claims arising out of or relating to
-				the use of or inability to use the service exceed the amount paid by you, if any, for
-				accessing Foxi during the twelve (12) months immediately preceding the date of the claim.
-				This limitation applies regardless of the form or source of the claim or loss, whether such
-				liability arises out of any claim based upon contract, warranty, tort, or otherwise.
-			</p>
-			<p>
-				Some jurisdictions do not allow the exclusion or limitation of liability for consequential
-				or incidental damages, so the above limitation may not apply to you. In such cases, our
-				liability will be limited to the fullest extent permitted by applicable law.
-			</p>
-		</div>
-	</SidebarContent>
+					<h4>Accounts</h4>
+					<p>
+						When you create an account with us, you must provide us information that is accurate,
+						complete, and current at all times. Failure to do so constitutes a breach of the Terms,
+						which may result in immediate termination of your account on our Service. You are
+						responsible for safeguarding the password that you use to access the Service and for any
+						activities or actions under your password, whether your password is with our Service or a
+						third-party service. You agree not to disclose your password to any third party. You must
+						notify us immediately upon becoming aware of any breach of security or unauthorized use of
+						your account. You may not use as a username the name of another person or entity or that
+						is not lawfully available for use, a name or trade mark that is subject to any rights of
+						another person or entity other than you without appropriate authorization, or a name that
+						is otherwise offensive, vulgar or obscene. You expressly agree that we cannot be held
+						liable for any loss or damage arising out of any misrepresentations you make in this
+						regard.
+					</p>
+
+					<h4>Intellectual Property</h4>
+					<p>
+						The Service and its original content, features and functionality are and will remain the
+						exclusive property of Apilio Ltd. and its licensors. The Service is protected by
+						copyright, trademark, and other laws of both the United Kingdom and foreign countries. Our
+						trademarks and trade dress may not be used in connection with any product or service
+						without the prior written consent of Apilio Ltd..
+					</p>
+
+					<h4>Links To Other Web Sites and Services</h4>
+					<p>
+						Our Service may contain links to third-party web sites or services that are not owned or
+						controlled by Apilio Ltd.. Apilio Ltd. has no control over, and assumes no responsibility
+						for, the content, privacy policies, or practices of any third party web sites or
+						services. You further acknowledge and agree that Apilio Ltd. shall not be responsible or
+						liable, directly or indirectly, for any damage or loss caused or alleged to be caused by
+						or in connection with use of or reliance on any such content, goods or services available
+						on or through any such web sites or services. We strongly advise you to read the terms
+						and conditions and privacy policies of any third-party web sites or services that you
+						visit.
+					</p>
+
+					<h4>Acceptable Use Statement</h4>
+					<p>
+						Acceptable Behaviour Apilio's services are intended to be used by individuals for personal
+						use. We therefore expect you to use the services in a respectful way in the context of
+						such scenarios.
+					</p>
+					<p>Unacceptable Behaviour:</p>
+					<ul>
+						<li>
+							Compromising the integrity of our systems. This could include probing, scanning, or
+							testing the vulnerability of any system or network that hosts our services.
+						</li>
+						<li>
+							Tampering with, reverse-engineering, or hacking our services, circumventing any
+							security or authentication measures, or attempting to gain unauthorized access to the
+							services, related systems, networks, or data
+						</li>
+						<li>
+							Modifying, disabling, or compromising the integrity or performance of the services or
+							related systems, network or data
+						</li>
+						<li>Deciphering any transmissions to or from the servers running the services</li>
+						<li>
+							Overwhelming or attempting to overwhelm our infrastructure by imposing an unreasonably
+							large load on our systems that consume extraordinary resources (CPUs, memory, disk
+							space, bandwidth, etc.
+						</li>
+						<li>Using the Services for any illegal purpose, or in violation of any laws</li>
+						<li>Violating the privacy or infringing the right of others</li>
+					</ul>
+					<p>
+						Consequences for breaching should we discover that you are using the Services in an
+						unacceptable way, we may terminate your account immediately (see chapter "Termination").
+					</p>
+
+					<h4>Termination</h4>
+					<p>
+						We may terminate or suspend your account immediately, without prior notice or liability,
+						for any reason whatsoever, including without limitation if you breach the Terms. Upon
+						termination, your right to use the Service will cease immediately. If you wish to
+						terminate your account, you may simply discontinue using the Service. All provisions of
+						the Terms which by their nature should survive termination shall survive termination,
+						including, without limitation, ownership provisions, warranty disclaimers, indemnity and
+						limitations of liability.
+					</p>
+
+					<h4>Indemnification</h4>
+					<p>
+						You agree to defend, indemnify and hold harmless Apilio Ltd. and its licensee and
+						licensors, and their employees, contractors, agents, officers and directors, from and
+						against any and all claims, damages, obligations, losses, liabilities, costs or debt, and
+						expenses (including but not limited to attorney's fees), resulting from or arising out of
+						a) your use and access of the Service, by you or any person using your account and
+						password, or b) a breach of these Terms.
+					</p>
+
+					<h4>Limitation Of Liability</h4>
+					<p>
+						In no event shall Apilio Ltd., nor its directors, employees, partners, agents, suppliers,
+						or affiliates, be liable for any indirect, incidental, special, consequential or punitive
+						damages, including without limitation, loss of profits, data, use, goodwill, or other
+						intangible losses, resulting from (i) your access to or use of or inability to access or
+						use the Service; (ii) any conduct or content of any third party on the Service; (iii) any
+						content obtained from the Service; and (iv) unauthorized access, use or alteration of your
+						transmissions or content, whether based on warranty, contract, tort (including negligence)
+						or any other legal theory, whether or not we have been informed of the possibility of such
+						damage, and even if a remedy set forth herein is found to have failed of its essential
+						purpose.
+					</p>
+
+					<h4>Disclaimer</h4>
+					<p>
+						Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and
+						"AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether
+						express or implied, including, but not limited to, implied warranties of merchantability,
+						fitness for a particular purpose, non-infringement or course of performance. Apilio Ltd.
+						its subsidiaries, affiliates, and its licensors do not warrant that a) the Service will
+						function uninterrupted, secure or available at any particular time or location; b) any
+						errors or defects will be corrected; c) the Service is free of viruses or other harmful
+						components; or d) the results of using the Service will meet your requirements. You
+						understand that you shall not use Apilio in connection with systems or dependent system
+						parts where human life or property could be at stake. You understand that the service is
+						not designed for such purposes and that its failure in such cases could lead to death,
+						personal injury, or severe property or environmental damage for which Apilio is not
+						responsible.
+					</p>
+
+					<h4>Exclusions</h4>
+					<p>
+						Without limiting the generality of the foregoing and notwithstanding any other provision of
+						these terms, under no circumstances will Apilio Ltd. ever be liable to you or any other
+						person for any indirect, incidental, consequential, special, punitive or exemplary loss or
+						damage arising from, connected with, or relating to your use of the Service, these Terms,
+						the subject matter of these Terms, the termination of these Terms or otherwise, including
+						but not limited to personal injury, loss of data, business, markets, savings, income,
+						profits, use, production, reputation or goodwill, anticipated or otherwise, or economic
+						loss, under any theory of liability (whether in contract, tort, strict liability or any
+						other theory or law or equity), regardless of any negligence or other fault or wrongdoing
+						(including without limitation gross negligence and fundamental breach) by Apilio Ltd. or
+						any person for whom Apilio Ltd. is responsible, and even if Apilio Ltd. has been advised
+						of the possibility of such loss or damage being incurred.
+					</p>
+
+					<h4>Governing Law</h4>
+					<p>
+						These Terms shall be governed and construed in accordance with the laws of England and
+						Wales, without regard to its conflict of law provisions. Our failure to enforce any right
+						or provision of these Terms will not be considered a waiver of those rights. If any
+						provision of these Terms is held to be invalid or unenforceable by a court, the remaining
+						provisions of these Terms will remain in effect. These Terms constitute the entire
+						agreement between us regarding our Service, and supersede and replace any prior agreements
+						we might have between us regarding the Service.
+					</p>
+
+					<h4>Changes</h4>
+					<p>
+						We reserve the right, at our sole discretion, to modify or replace these Terms at any
+						time. If a revision is material we will try to provide at least 15 days' notice prior to
+						any new terms taking effect. What constitutes a material change will be determined at our
+						sole discretion. By continuing to access or use our Service after those revisions become
+						effective, you agree to be bound by the revised terms. If you do not agree to the new
+						terms, you must delete your account and stop using the service.
+					</p>
+
+					<h4>Privacy Policy and Cookie Policy</h4>
+					<p>
+						Please refer to our <a href="/privacy">Privacy Policy</a> and Cookies Policy. You agree
+						that they constitute part of these terms. You must read our Privacy Policy and Cookies
+						Policy before you use the Service.
+					</p>
+				</div>
+			</Col>
+			<Col span="2" />
+		</Row>
+	</Section>
 </Layout>
