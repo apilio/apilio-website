@@ -32,7 +32,7 @@
 	{
 		"title": "Action delays",
 		"icon": "clock",
-		"description": "Delay individual actions within a logicblock. \"Turn on lights now, close blinds in 30 minutes, adjust thermostat in 1 hour\" — all from one trigger.",
+		"description": "Delay individual actions within a logicblock by seconds, minutes or hours. \"Turn on lights now, close blinds in 30 minutes, adjust thermostat in 1 hour\" — all from one trigger.",
 		"category": "Timing & Delays"
 	},
 	{
