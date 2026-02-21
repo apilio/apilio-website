@@ -1,50 +1,69 @@
 ---
 // Components
-// - Layout
 import Layout from '../layouts/Layout.astro'
-// - UI
 import Hero from '../components/blocks/hero/PageHeader.astro'
-import Price from '../components/blocks/pricing/PricingColumns.astro'
-import SocialProof from '../components/blocks/socialproof/Basic.astro'
+import Price from '../components/blocks/pricing/PricingColumnsSimple.astro'
 import FAQ from '../components/blocks/FAQ/Basic.astro'
-import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
-import Feature from '../components/blocks/features/FeatureList.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+import Button from '../components/ui/Button.astro'
 
-// Content
-// - SEO
+// SEO
 const SEO = {
-	title: 'Foxi | Pricing made simple',
+	title: 'Apilio | Pricing — Simple, affordable plans',
 	description:
-		'Discover the perfect SaaS pricing plan for your business. From startups to enterprises, our scalable solutions offer unparalleled features and 24/7 support.'
-}
-// - Page Header
-const header = {
-	title: 'Choose the plan that works for <strong>your</strong> needs',
-	text: 'All plans come with a 30-day money-back guarantee.'
-}
-// - Testimonial data
-import testimonialBackground from '../assets/testimonial-bg-02.webp'
-const testimonialData = {
-	blockquote:
-		"Foxi isn't just an app—it's like having a mischievous yet brilliant sidekick for your business. It streamlines tasks and also cracks jokes to keep spirits high",
-	figcaption: 'Max Widgetson',
-	cite: ' CEO, Widgetify Ltd'
+		'Apilio plans start at $1.50/month. 21-day free trial, no credit card required. Compare Essential, Advanced, and Pro plans.'
 }
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
-	<Hero title={header.title} text={header.text} />
-	<Price />
-	<SocialProof />
-	<Feature />
-	<Testimonial
-		bg={testimonialBackground}
-		bgPosition="left"
-		blockquote={testimonialData.blockquote}
-		figcaption={testimonialData.figcaption}
-		cite={testimonialData.cite}
+	<Hero
+		title="Simple, affordable <strong>pricing</strong>"
+		text="Start free for 21 days. No credit card required."
 	/>
-	<FAQ classes="bg-slate-50 dark:bg-neutral-900/40" />
+
+	<Price />
+
+	<!-- Additional plans -->
+	<Section>
+		<Row>
+			<Col span="12" align="center" classes="mb-8">
+				<h2 class="text-pretty text-2xl">More <strong>options</strong></h2>
+			</Col>
+		</Row>
+		<Row>
+			<Col span="6">
+				<div class="rounded-lg border border-neutral-100 bg-white p-8 shadow-lg shadow-neutral-700/5 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-neutral-950/50">
+					<h3 class="mb-1 text-xl font-bold text-neutral-700 dark:text-neutral-50">Home</h3>
+					<p class="mb-4 text-sm text-neutral-400">Between Essential and Advanced</p>
+					<p class="mb-4 text-4xl font-bold text-neutral-700 dark:text-neutral-50">
+						<span class="text-2xl">$</span>2.40<span class="text-sm font-normal text-neutral-400">/month</span>
+					</p>
+					<p class="mb-6 text-neutral-500 dark:text-neutral-400">
+						10 logicblocks, 50 variables & conditions. All Essential features — more room to grow.
+					</p>
+					<Button style="primary" link="https://app.apilio.com/signup">Start free trial</Button>
+				</div>
+			</Col>
+			<Col span="6">
+				<div class="rounded-lg border border-neutral-100 bg-white p-8 shadow-lg shadow-neutral-700/5 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-neutral-950/50">
+					<h3 class="mb-1 text-xl font-bold text-neutral-700 dark:text-neutral-50">Extra</h3>
+					<p class="mb-4 text-sm text-neutral-400">Maximum capacity</p>
+					<p class="mb-4 text-4xl font-bold text-neutral-700 dark:text-neutral-50">
+						<span class="text-2xl">$</span>6.90<span class="text-sm font-normal text-neutral-400">/month</span>
+					</p>
+					<p class="mb-6 text-neutral-500 dark:text-neutral-400">
+						350 logicblocks, 350 variables & conditions. All Advanced features at the highest limits.
+					</p>
+					<Button style="primary" link="https://app.apilio.com/signup">Start free trial</Button>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+
+	<FAQ classes="bg-neutral-50 dark:bg-neutral-900/40" />
+
 	<CTA />
 </Layout>

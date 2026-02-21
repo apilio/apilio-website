@@ -1,63 +1,89 @@
 ---
 // Components
-// - Layout
 import Layout from '../layouts/Layout.astro'
-// - UI
-import Feature from '../components/blocks/features/FeatureSticky.astro'
 import Hero from '../components/blocks/hero/PageHeader.astro'
+import Feature from '../components/blocks/features/FeatureSticky.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+import Button from '../components/ui/Button.astro'
 
 // Data
 import featuresData from '../data/json-files/featuresData.json'
-// - Feature Categories
-const featuresAnalytics = featuresData.filter((feature) => feature.category === 'Analytics')
-const featuresProductivity = featuresData.filter((feature) => feature.category === 'Productivity')
-const featuresSecurity = featuresData.filter((feature) => feature.category === 'Security')
-const featuresIntegrations = featuresData.filter((feature) => feature.category === 'Integrations')
-const featuresSupport = featuresData.filter((feature) => feature.category === 'Support')
 
-// Content
-// - SEO
+const automationLogic = featuresData.filter((f) => f.category === 'Automation Logic')
+const timingDelays = featuresData.filter((f) => f.category === 'Timing & Delays')
+const devices = featuresData.filter((f) => f.category === 'Devices')
+const executionModes = featuresData.filter((f) => f.category === 'Execution Modes')
+const monitoring = featuresData.filter((f) => f.category === 'Monitoring & Notifications')
+const apiWebhooks = featuresData.filter((f) => f.category === 'REST API & Webhooks')
+
+// SEO
 const SEO = {
-	title: 'Foxi | Features to Boost Productivity & Security',
+	title: 'Apilio | Features — Powerful smart home automation',
 	description:
-		"Explore Foxi's powerful features designed to enhance productivity, ensure top-notch security, and integrate seamlessly with your favorite tools. Join thousands of satisfied users and transform your workflow with Foxi today!"
-}
-// - Page Header
-const header = {
-	title: 'Why you and your team will <strong>love</strong> foxi.',
-	text: 'Streamline your tasks, protect your data, and enjoy working with our tools!'
+		'Explore Apilio\'s features: complex automation logic, precise timing, cross-brand device control, execution modes, monitoring, REST API and webhooks.'
 }
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
-	<Hero title={header.title} text={header.text} />
+	<Hero
+		title="Everything you need to <strong>automate</strong> your home"
+		text="Apilio gives you the building blocks for automations that actually match how you live."
+	/>
+
 	<Feature
-		title="Insightful Analytics"
-		text="Delve into your data with precision and uncover actionable insights."
-		data={featuresAnalytics}
+		title="Build rules that match real life"
+		text="Simple if-then doesn't cut it. Real life is messy — your automations should handle that."
+		data={automationLogic}
 	/>
 	<Feature
-		title="Efficiency Unleashed"
-		text="Streamline tasks and focus on what matters with tools designed to boost your productivity."
-		data={featuresSecurity}
+		title="Precise control over when things happen"
+		text="Not everything should happen instantly. Apilio lets you orchestrate timing down to the minute."
+		data={timingDelays}
 		classes="bg-neutral-50 dark:bg-neutral-900"
 	/>
 	<Feature
-		title="Ultimate Data Protection"
-		text="Keep your data safe with top-notch security measures and real-time threat detection."
-		data={featuresProductivity}
+		title="Your devices, all in one place"
+		text="No matter the brand, Apilio brings them together in a single dashboard."
+		data={devices}
 	/>
 	<Feature
-		title="Seamless Connectivity"
-		text="Effortlessly connect your favorite apps and automate workflows for a smoother workday."
-		data={featuresIntegrations}
+		title="Stay in control"
+		text="Not every automation should run silently. Sometimes you want a heads-up, sometimes you want to decide."
+		data={executionModes}
 		classes="bg-neutral-50 dark:bg-neutral-900"
 	/>
 	<Feature
-		title="24/7 Expert Help"
-		text="Our friendly support team is always here to assist you with any questions or issues."
-		data={featuresSupport}
+		title="See what's happening"
+		text="Real-time visibility into every automation, every device, every event."
+		data={monitoring}
 	/>
+	<Feature
+		title="For the tinkerers and builders"
+		text="Full programmatic access. If it speaks HTTP, it works with Apilio."
+		data={apiWebhooks}
+		classes="bg-neutral-50 dark:bg-neutral-900"
+	/>
+
+	<!-- Cross-links -->
+	<Section>
+		<Row>
+			<Col span="6">
+				<div class="rounded-lg border border-neutral-100 p-8 text-center dark:border-neutral-800">
+					<h3 class="text-xl">See what devices work with Apilio</h3>
+					<Button style="primary" link="/integrations">View integrations</Button>
+				</div>
+			</Col>
+			<Col span="6">
+				<div class="rounded-lg border border-neutral-100 p-8 text-center dark:border-neutral-800">
+					<h3 class="text-xl">Find the right plan for you</h3>
+					<Button style="primary" link="/pricing">View pricing</Button>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+
 	<CTA />
 </Layout>

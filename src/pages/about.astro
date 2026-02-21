@@ -16,6 +16,17 @@ import teamPhoto from '../assets/webflow/photo-winterthur-graffiti.jpg'
 import devicesImage from '../assets/webflow/illustration-device-avatars-integrations.png'
 import zhawLogo from '../assets/webflow/logo-zhaw-runway-incubator.png'
 import technoparkLogo from '../assets/webflow/logo-technopark-winterthur.png'
+import photoPhilipp from '../assets/webflow/team-philipp-ebneter.png'
+import photoDan from '../assets/webflow/team-dan-turner.png'
+import photoAnna from '../assets/webflow/team-anna-pena-martinez.png'
+import photoCristovao from '../assets/webflow/team-cristovao-alves.png'
+
+const team = [
+	{ name: 'Philipp Ebneter', photo: photoPhilipp },
+	{ name: 'Dan Turner', photo: photoDan },
+	{ name: 'Anna Pe\u00f1a Martinez', photo: photoAnna },
+	{ name: 'Cristov\u00e3o Alves', photo: photoCristovao }
+]
 
 // SEO
 const SEO = {
@@ -40,6 +51,32 @@ const SEO = {
 		imageHeight={devicesImage.height}
 		imagePosition="right"
 	/>
+
+	<!-- The team -->
+	<Section>
+		<Row>
+			<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+				<h2 class="text-pretty">The <strong>team</strong></h2>
+			</Col>
+		</Row>
+		<Row>
+			{
+				team.map((member) => (
+					<Col span="3" align="center">
+						<Image
+							src={member.photo}
+							alt={member.name}
+							class="mx-auto mb-4 h-32 w-32 rounded-full object-cover"
+							width={128}
+							height={128}
+							format="webp"
+						/>
+						<p class="font-medium text-neutral-700 dark:text-neutral-200">{member.name}</p>
+					</Col>
+				))
+			}
+		</Row>
+	</Section>
 
 	<!-- Community -->
 	<Section classes="bg-neutral-50 dark:bg-neutral-900">

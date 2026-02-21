@@ -1,0 +1,46 @@
+---
+// Simple Pricing Columns (no monthly/annual toggle)
+
+// Components
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import PricingTable from '../../ui/pricing-tables/PricingTable.astro'
+
+// Content
+import pricingTablesData from '../../../data/json-files/pricingTablesdata.json'
+
+type PricingTableData = {
+	header: {
+		title: string
+		subtitle: string
+		currency: string
+		price: string
+		priceLabel: string
+		buttonName: string
+		buttonLink: string
+	}
+	body?: {
+		listItems: Array<{ listItem: string }>
+	}
+	footer?: {
+		buttonName: string
+		buttonLink: string
+	}
+	type: 'basic' | 'featured'
+}
+
+const pricingData: PricingTableData[] = pricingTablesData as PricingTableData[]
+---
+
+<Section>
+	<Row>
+		{
+			pricingData.map((item, key) => (
+				<Col span="4">
+					<PricingTable data={item} listType="checklist" id={`plan-${key}`} />
+				</Col>
+			))
+		}
+	</Row>
+</Section>
