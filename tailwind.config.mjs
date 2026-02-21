@@ -64,7 +64,7 @@ export default {
       },
       fontFamily: {
         sans: ["Roboto Variable", ...defaultTheme.fontFamily.sans],
-        headings: ["Montserrat Variable", ...defaultTheme.fontFamily.sans],
+        headings: ["Open Sans Variable", ...defaultTheme.fontFamily.sans],
         logo: ["Roboto Slab Variable", ...defaultTheme.fontFamily.serif],
       },
       keyframes: {
