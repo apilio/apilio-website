@@ -22,7 +22,7 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 			<div class="footer__cols">
 				<div class="footer__col">
 					<a aria-label="webiste logo" aria-current="page" class="footer__main-brand" href="/">
-						<img src={footerAbout.logo.src} alt={footerAbout.logo.alt} width="32" height="32" />
+						<img src={footerAbout.logo.src} alt={footerAbout.logo.alt} width="32" height="32" class="dark:invert" />
 						{footerAbout.logo.text}
 					</a>
 					<p>
@@ -84,7 +84,7 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 		@apply mb-6 text-base font-medium leading-8 text-neutral-700 dark:text-neutral-50;
 	}
 	.footer__main-brand {
-		@apply mb-6 flex items-center gap-2 whitespace-nowrap font-headings text-xl font-bold leading-6 text-neutral-700 focus:outline-none dark:text-neutral-50;
+		@apply mb-6 flex items-center gap-2 whitespace-nowrap font-logo text-xl font-light uppercase tracking-[0.25em] leading-6 text-neutral-700 focus:outline-none dark:text-neutral-50;
 	}
 	.footer__container {
 		@apply container mx-auto px-6;

@@ -81,6 +81,10 @@ public/
 - **Dark mode:** Selector-based, toggleable (auto/light/dark via `config.ts`)
 - **Animations:** fadeUp, fadeInShadow, dropdown (Tailwind config)
 
+## TODO
+
+- [ ] Logo text font: Roboto Slab doesn't match the original Apilio brand typeface — identify the correct font (thin serif used in `Logo/` assets) and replace `font-logo` in Tailwind config
+
 ## Customization Checklist
 
 - [ ] Update site config (`src/config/config.ts`) — title, description, logo
