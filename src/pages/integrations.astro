@@ -1,0 +1,217 @@
+---
+// Components
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/blocks/hero/PageHeader.astro'
+import CTA from '../components/blocks/CTA/BasicDark.astro'
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+import Feature from '../components/ui/Feature.astro'
+import Button from '../components/ui/Button.astro'
+import { Image } from 'astro:assets'
+
+// Assets — Native integration logos
+import tuya from '../assets/webflow/logo-tuya-smart-life.png'
+import hue from '../assets/webflow/logo-philips-hue.png'
+import alexa from '../assets/webflow/logo-amazon-alexa.png'
+import ifttt from '../assets/webflow/logo-ifttt.svg'
+
+// Assets — IFTTT brands
+import google from '../assets/webflow/logo-google-assistant.png'
+import netatmo from '../assets/webflow/logo-netatmo.png'
+import smartthings from '../assets/webflow/logo-smartthings-samsung.jpg'
+import lifx from '../assets/webflow/logo-lifx.png'
+
+// Assets — Images
+import apiImage from '../assets/webflow/feature-api-webhooks-automation.png'
+import matterImage from '../assets/webflow/illustration-matter-protocol.png'
+
+// SEO
+const SEO = {
+	title: 'Apilio | Integrations — Works with your devices',
+	description:
+		'Native integrations with Tuya, Philips Hue, Sonoff, Tado, Alexa, and IFTTT. Plus webhooks and REST API to connect anything else.'
+}
+
+// Data
+const nativeIntegrations = [
+	{
+		logo: tuya,
+		name: 'Tuya / Smart Life',
+		description:
+			'Real-time events from bulbs, sockets, switches, plugs, temperature sensors, presence sensors, and cameras. Supports raw data type devices. The largest smart home ecosystem — one integration covers thousands of products.'
+	},
+	{
+		logo: hue,
+		name: 'Philips Hue',
+		description:
+			'Full control over lights, scenes, and groups. Combine Hue with devices from other brands in a single automation.'
+	},
+	{
+		logo: alexa,
+		name: 'Amazon Alexa',
+		description:
+			"Trigger Alexa routines directly from Apilio. Use Alexa's vast device support as an output for your Apilio logic."
+	},
+	{
+		logo: ifttt,
+		name: 'IFTTT',
+		description:
+			'Access 600+ device brands and services. Apilio adds the logic layer that IFTTT lacks — complex conditions, delays, state persistence.'
+	}
+]
+
+const iftttBrands = [
+	{ image: google, alt: 'Google Assistant' },
+	{ image: netatmo, alt: 'Netatmo' },
+	{ image: smartthings, alt: 'SmartThings' },
+	{ image: lifx, alt: 'LIFX' }
+]
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero
+		title="Works with your <strong>devices</strong>"
+		text="Native integrations with real-time updates. Plus webhooks and API to connect anything else."
+	/>
+
+	<!-- Native integrations -->
+	<Section id="native">
+		<Row>
+			<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+				<h2 class="text-pretty">Native <strong>integrations</strong></h2>
+				<p class="pb-0 text-lg">
+					Direct connections with real-time device updates. No IFTTT required.
+				</p>
+			</Col>
+		</Row>
+		<Row>
+			{
+				nativeIntegrations.map((integration) => (
+					<Col span="3" spanMobile="6">
+						<div class="flex flex-col items-center rounded-lg border border-neutral-100 p-6 text-center dark:border-neutral-800">
+							<Image
+								src={integration.logo}
+								alt={integration.name}
+								class="mb-4 h-12 w-auto object-contain"
+							/>
+							<h3 class="mb-2 text-lg font-medium">{integration.name}</h3>
+							<p class="text-sm">{integration.description}</p>
+						</div>
+					</Col>
+				))
+			}
+		</Row>
+		<Row classes="mt-8">
+			<Col span="3" spanMobile="6">
+				<div class="flex flex-col items-center rounded-lg border border-neutral-100 p-6 text-center dark:border-neutral-800">
+					<Feature title="Sonoff / eWeLink" icon="bolt" align="center">
+						<p class="text-sm">
+							Switches, plugs, power monitoring, lights, LED strips, fans, and all sensor types.
+							WiFi and Zigbee. All regions. Real-time updates, no IFTTT needed.
+						</p>
+					</Feature>
+				</div>
+			</Col>
+			<Col span="3" spanMobile="6">
+				<div class="flex flex-col items-center rounded-lg border border-neutral-100 p-6 text-center dark:border-neutral-800">
+					<Feature title="Tado" icon="sun" align="center">
+						<p class="text-sm">
+							Set temperature, turn off heating, or resume Tado auto mode — the last one is nearly
+							impossible on other platforms.
+						</p>
+					</Feature>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- Webhooks & API -->
+	<Section classes="bg-neutral-50 dark:bg-neutral-900">
+		<Row>
+			<Col span="6" classes="relative">
+				<Image
+					src={apiImage}
+					alt="Apilio API and webhooks"
+					class="rounded-lg"
+					format="webp"
+				/>
+			</Col>
+			<Col span="6" classes="self-center">
+				<div class="max-w-xl">
+					<h2 class="text-pretty text-2xl lg:text-3xl">
+						Connect <strong>anything</strong> with webhooks and API
+					</h2>
+					<ul class="mb-6 space-y-2 text-lg leading-relaxed">
+						<li>Every variable and logicblock has its own webhook URL</li>
+						<li>Send data in from any service, trigger logic on demand</li>
+						<li>Outgoing webhooks with custom headers, body, and authorization</li>
+						<li>Full REST API for programmatic control</li>
+					</ul>
+					<p class="mb-6 text-neutral-400">
+						Works with Zapier, iOS Shortcuts, Tasker, Locative, Life360, Node-RED, and more.
+					</p>
+					<Button
+						size="base"
+						style="primary"
+						variation="outline"
+						link="https://documenter.getpostman.com/view/6470083/apilio-api/7TNfX9p"
+					>
+						View API docs
+					</Button>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- Via IFTTT -->
+	<Section>
+		<Row>
+			<Col span="12" align="center" classes="mb-8 max-w-4xl mx-auto">
+				<h2 class="text-pretty">600+ more brands through <strong>IFTTT</strong></h2>
+				<p class="pb-0 text-lg">
+					Anything that works with IFTTT works with Apilio — but with real logic on top.
+				</p>
+			</Col>
+		</Row>
+		<Row>
+			<Col span="12">
+				<div class="flex flex-wrap items-center justify-center gap-12">
+					{
+						iftttBrands.map((brand) => (
+							<Image
+								src={brand.image}
+								alt={brand.alt}
+								class="h-10 w-auto object-contain opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0 dark:brightness-200 dark:hover:brightness-100"
+							/>
+						))
+					}
+				</div>
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- Coming soon: Matter -->
+	<Section padding="bottom">
+		<Row>
+			<Col span="6" classes={`self-center`}>
+				<div class="max-w-xl">
+					<h2 class="text-pretty text-2xl lg:text-3xl">Coming soon: <strong>Matter</strong></h2>
+					<p class="text-lg leading-relaxed">
+						Matter protocol support is in development. One standard to connect them all.
+					</p>
+				</div>
+			</Col>
+			<Col span="6" classes="relative">
+				<Image
+					src={matterImage}
+					alt="Matter protocol illustration"
+					class="rounded-lg"
+					format="webp"
+				/>
+			</Col>
+		</Row>
+	</Section>
+
+	<CTA />
+</Layout>

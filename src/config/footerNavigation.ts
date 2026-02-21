@@ -87,8 +87,8 @@ export const footerNavigationData: FooterData = {
 					subCategoryLink: '/about'
 				},
 				{
-					subCategory: 'Twitter',
-					subCategoryLink: 'https://twitter.com/apaborern'
+					subCategory: 'LinkedIn',
+					subCategoryLink: 'https://www.linkedin.com/company/apilio'
 				}
 			]
 		}

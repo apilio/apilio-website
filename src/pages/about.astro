@@ -1,0 +1,157 @@
+---
+// Components
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/blocks/hero/PageHeader.astro'
+import CTA from '../components/blocks/CTA/BasicDark.astro'
+import TextImage from '../components/blocks/basic/TextImage.astro'
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+import Feature from '../components/ui/Feature.astro'
+import Button from '../components/ui/Button.astro'
+import { Image } from 'astro:assets'
+
+// Assets
+import teamPhoto from '../assets/webflow/photo-winterthur-graffiti.jpg'
+import devicesImage from '../assets/webflow/illustration-device-avatars-integrations.png'
+import zhawLogo from '../assets/webflow/logo-zhaw-runway-incubator.png'
+import technoparkLogo from '../assets/webflow/logo-technopark-winterthur.png'
+
+// SEO
+const SEO = {
+	title: 'Apilio | About — Built for smarter homes',
+	description:
+		'Apilio was built for people who want their smart home to actually be smart. Learn about our story, community, and how to get in touch.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero
+		title="About <strong>Apilio</strong>"
+		text="Built for people who want their smart home to actually be smart."
+	/>
+
+	<!-- The story -->
+	<TextImage
+		title="Why we built <strong>Apilio</strong>"
+		text="Mainstream platforms like IFTTT offer simple if-then rules — fine for basics, but not for real life. Home Assistant is powerful, but requires a server and technical skill. We built Apilio to fill the gap: powerful automation logic that anyone can set up, running in the cloud with no hardware to maintain. If you own smart devices from different brands and want them to work together intelligently, Apilio is for you."
+		image={devicesImage}
+		imageWidth={devicesImage.width}
+		imageHeight={devicesImage.height}
+		imagePosition="right"
+	/>
+
+	<!-- Community -->
+	<Section classes="bg-neutral-50 dark:bg-neutral-900">
+		<Row>
+			<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+				<h2 class="text-pretty">Built with our <strong>community</strong></h2>
+				<p class="pb-0 text-lg">
+					Apilio is shaped by the people who use it every day.
+				</p>
+			</Col>
+		</Row>
+		<Row>
+			<Col span="4">
+				<Feature title="Community forum" icon="chat-bubble-left-right" align="center">
+					<p>
+						200+ support threads, use case sharing, and feature voting. A place to learn, share,
+						and get help.
+					</p>
+					<Button
+						size="sm"
+						style="primary"
+						variation="link"
+						link="https://community.apilio.com"
+					>
+						Visit the forum →
+					</Button>
+				</Feature>
+			</Col>
+			<Col span="4">
+				<Feature title="Documentation" icon="book" align="center">
+					<p>
+						Getting started guides, how-tos, and integration tutorials. Everything you need to set
+						up your automations.
+					</p>
+					<Button
+						size="sm"
+						style="primary"
+						variation="link"
+						link="https://community.apilio.com/docs"
+					>
+						Read the docs →
+					</Button>
+				</Feature>
+			</Col>
+			<Col span="4">
+				<Feature title="Feature requests" icon="light-bulb" align="center">
+					<p>
+						Users propose and vote on features. The roadmap is shaped by the community, not just by
+						us.
+					</p>
+					<Button
+						size="sm"
+						style="primary"
+						variation="link"
+						link="https://community.apilio.com"
+					>
+						Share your ideas →
+					</Button>
+				</Feature>
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- Based in Winterthur -->
+	<Section>
+		<Row>
+			<Col span="6" classes="relative">
+				<Image
+					src={teamPhoto}
+					alt="Winterthur, Switzerland"
+					class="rounded-lg"
+					format="webp"
+				/>
+			</Col>
+			<Col span="6" classes="self-center">
+				<div class="max-w-xl">
+					<h2 class="text-pretty text-2xl lg:text-3xl">Based in <strong>Winterthur</strong>, Switzerland</h2>
+					<p class="text-lg leading-relaxed">
+						Apilio is a small, independent team. We started as part of the ZHAW Runway Incubator
+						and are based at Technopark Winterthur.
+					</p>
+					<div class="mt-6 flex items-center gap-8">
+						<Image
+							src={zhawLogo}
+							alt="ZHAW Runway Incubator"
+							class="h-10 w-auto object-contain opacity-60 grayscale dark:brightness-200"
+						/>
+						<Image
+							src={technoparkLogo}
+							alt="Technopark Winterthur"
+							class="h-10 w-auto object-contain opacity-60 grayscale dark:brightness-200"
+						/>
+					</div>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- Contact -->
+	<Section classes="bg-neutral-50 dark:bg-neutral-900">
+		<Row>
+			<Col span="12" align="center" classes="max-w-2xl mx-auto">
+				<h2 class="text-pretty">Get in <strong>touch</strong></h2>
+				<p class="text-lg leading-relaxed">
+					Questions? Ideas? Just want to say hi? Drop us an email and we'll get back to you.
+				</p>
+				<Button size="lg" style="primary" link="mailto:hello@apilio.com">
+					hello@apilio.com
+				</Button>
+			</Col>
+		</Row>
+	</Section>
+
+	<CTA />
+</Layout>

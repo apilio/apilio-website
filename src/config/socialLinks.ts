@@ -10,8 +10,8 @@ export interface SocialLink {
 
 export const socialLinks: SocialLink[] = [
 	{
-		name: 'twitter',
-		link: 'https://twitter.com/apaborern',
-		icon: 'twitter-icon'
+		name: 'LinkedIn',
+		link: 'https://www.linkedin.com/company/apilio',
+		icon: 'linkedin-icon'
 	}
 ]
