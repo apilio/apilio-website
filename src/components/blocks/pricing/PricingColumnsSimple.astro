@@ -37,10 +37,22 @@ const pricingData: PricingTableData[] = pricingTablesData as PricingTableData[]
 	<Row>
 		{
 			pricingData.map((item, key) => (
-				<Col span="4">
-					<PricingTable data={item} listType="checklist" id={`plan-${key}`} />
+				<Col span="4" classes="flex">
+					<PricingTable data={item} listType="checklist" id={`plan-${key}`} classes="w-full" />
 				</Col>
 			))
 		}
 	</Row>
 </Section>
+
+<style>
+	.pricing {
+		height: 100%;
+	}
+	.pricing .pricing__container {
+		height: 100%;
+	}
+	.pricing .pricing__body {
+		flex: 1;
+	}
+</style>
