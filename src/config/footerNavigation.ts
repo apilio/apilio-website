@@ -75,7 +75,7 @@ export const footerNavigationData: FooterData = {
 				},
 				{
 					subCategory: 'API Docs',
-					subCategoryLink: 'https://documenter.getpostman.com/view/6470083/apilio-api/7TNfX9p'
+					subCategoryLink: 'https://documenter.getpostman.com/view/13480928/TzCHAVD2'
 				},
 				{
 					subCategory: 'Terms & Conditions',
