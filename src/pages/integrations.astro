@@ -47,37 +47,49 @@ const nativeIntegrations = [
 		logo: tuya,
 		name: 'Tuya / Smart Life',
 		description:
-			'Real-time events from bulbs, sockets, switches, plugs, temperature sensors, presence sensors, and cameras. Supports raw data type devices. The largest smart home ecosystem — one integration covers thousands of products.'
+			'Real-time events from bulbs, sockets, switches, plugs, temperature sensors, presence sensors, and cameras. Supports raw data type devices. The largest smart home ecosystem — one integration covers thousands of products.',
+		conditions: true,
+		actions: true
 	},
 	{
 		logo: hue,
 		name: 'Philips Hue',
 		description:
-			'Full control over lights, scenes, and groups. Combine Hue with devices from other brands in a single automation.'
+			'Full control over lights, scenes, and groups. Combine Hue with devices from other brands in a single automation.',
+		conditions: false,
+		actions: true
 	},
 	{
 		logo: ewelink,
 		name: 'eWeLink',
 		description:
-			'Switches, plugs, power monitoring, lights, LED strips, fans, and all sensor types. WiFi and Zigbee. All regions. Real-time updates, no IFTTT needed.'
+			'Switches, plugs, power monitoring, lights, LED strips, fans, and all sensor types. WiFi and Zigbee. All regions. Real-time updates, no IFTTT needed.',
+		conditions: true,
+		actions: true
 	},
 	{
 		logo: tado,
 		name: 'tado°',
 		description:
-			'Set temperature, turn off heating, or resume Tado auto mode — the last one is nearly impossible on other platforms.'
+			'Set temperature, turn off heating, or resume Tado auto mode — the last one is nearly impossible on other platforms.',
+		conditions: false,
+		actions: true
 	},
 	{
 		logo: alexa,
 		name: 'Amazon Alexa',
 		description:
-			"Trigger Alexa routines directly from Apilio. Use Alexa's vast device support as an output for your Apilio logic."
+			"Trigger Alexa routines directly from Apilio. Use Alexa's vast device support as an output for your Apilio logic.",
+		conditions: false,
+		actions: true
 	},
 	{
 		logo: ifttt,
 		name: 'IFTTT',
 		description:
-			'Access 600+ device brands and services. Apilio adds the logic layer that IFTTT lacks — complex conditions, delays, state persistence.'
+			'Access 600+ device brands and services. Apilio adds the logic layer that IFTTT lacks — complex conditions, delays, state persistence.',
+		conditions: true,
+		actions: true
 	}
 ]
 
@@ -118,7 +130,21 @@ const iftttBrands = [
 								class="mb-4 h-12 w-auto object-contain dark:brightness-200"
 							/>
 							<h3 class="mb-2 text-lg font-medium">{integration.name}</h3>
-							<p class="text-sm">{integration.description}</p>
+							<p class="mb-4 text-sm">{integration.description}</p>
+							<div class="mt-auto flex flex-wrap justify-center gap-2">
+								{integration.conditions && (
+									<span class="inline-flex items-center gap-1 rounded-full bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900/30 dark:text-primary-300">
+										<Icon name="inbox-arrow-down" class="h-3 w-3" />
+										Conditions
+									</span>
+								)}
+								{integration.actions && (
+									<span class="inline-flex items-center gap-1 rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
+										<Icon name="play-circle" class="h-3 w-3" />
+										Actions
+									</span>
+								)}
+							</div>
 						</div>
 					</Col>
 				))
@@ -156,14 +182,18 @@ const iftttBrands = [
 					<h2 class="text-pretty text-2xl lg:text-3xl">
 						Connect <strong>anything</strong> with webhooks and API
 					</h2>
-					<ul class="mb-6 space-y-2 text-lg leading-relaxed">
-						<li>Every variable and logicblock has its own webhook URL</li>
-						<li>Send data in from any service, trigger logic on demand</li>
-						<li>Outgoing webhooks with custom headers, body, and authorization</li>
+					<p class="text-lg leading-relaxed">
+						Every variable and logicblock in Apilio has its own webhook URL. Send in data from any
+						source — weather forecasts, electricity prices, CO2 levels — and trigger logic on demand.
+					</p>
+					<ul class="mb-6 list-disc space-y-2 pl-5 text-lg leading-relaxed">
+						<li>Bidirectional webhooks with custom headers, body, and authorization</li>
 						<li>Full REST API for programmatic control</li>
+						<li>Works with Zapier, iOS Shortcuts, Tasker, Locative, Node-RED, and more</li>
 					</ul>
 					<p class="mb-6 text-neutral-400">
-						Works with Zapier, iOS Shortcuts, Tasker, Locative, Life360, Node-RED, and more.
+						Not just for smart homes — users automate energy optimization, server monitoring,
+						notifications, and more. If it speaks HTTP or IFTTT, Apilio can add the logic.
 					</p>
 					<Button
 						size="base"

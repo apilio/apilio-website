@@ -5,16 +5,8 @@ import Hero from '../components/blocks/hero/HomeCTA.astro'
 import SocialProof from '../components/blocks/socialproof/Basic.astro'
 import HowItWorks from '../components/blocks/features/HomeHowItWorks.astro'
 import Benefits from '../components/blocks/features/HomeBenefits.astro'
-import HighlightRows from '../components/blocks/highlights/HightlightRows.astro'
+import Testimonials from '../components/blocks/testimonials/ThreeUp.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
-
-// API callout section
-import Section from '../components/ui/Section.astro'
-import Row from '../components/ui/Row.astro'
-import Col from '../components/ui/Col.astro'
-import Button from '../components/ui/Button.astro'
-import { Image } from 'astro:assets'
-import apiImage from '../assets/webflow/feature-api-webhooks-automation.png'
 
 // SEO
 const SEO = {
@@ -29,43 +21,6 @@ const SEO = {
 	<SocialProof />
 	<HowItWorks />
 	<Benefits />
-	<HighlightRows />
-
-	<!-- Section 6: API & Webhooks callout -->
-	<Section>
-		<Row>
-			<Col span="6" classes="relative">
-				<Image
-					src={apiImage}
-					alt="Apilio API and webhooks automation"
-					class="rounded-lg"
-					format="webp"
-				/>
-			</Col>
-			<Col span="6" classes="self-center">
-				<div class="max-w-xl">
-					<h2 class="text-pretty text-2xl lg:text-3xl">Connect <strong>anything</strong></h2>
-					<p class="text-lg leading-relaxed">
-						Full REST API and bidirectional webhooks. Feed in weather data, electricity prices, or
-						CO2 levels. Trigger actions in any service that speaks HTTP. Use iOS Shortcuts, Tasker,
-						Zapier, or your own scripts.
-					</p>
-					<p class="text-lg leading-relaxed">
-						Not just for smart homes — users automate crypto trading, server monitoring, notifications,
-						and more. If it connects via REST API, webhooks, or IFTTT, Apilio can add the logic.
-					</p>
-					<Button
-						size="base"
-						style="primary"
-						variation="outline"
-						link="https://documenter.getpostman.com/view/6470083/apilio-api/7TNfX9p"
-					>
-						View API docs
-					</Button>
-				</div>
-			</Col>
-		</Row>
-	</Section>
-
+	<Testimonials />
 	<CTA />
 </Layout>

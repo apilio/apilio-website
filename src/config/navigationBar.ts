@@ -42,7 +42,7 @@ export const navigationBarData: NavData = {
 		{ name: 'Features', link: '/features' },
 		{ name: 'Integrations', link: '/integrations' },
 		{ name: 'Pricing', link: '/pricing' },
-		{ name: 'About', link: '/about' }
+		{ name: 'Learn', link: '/learn' }
 	],
 	navActions: [{ name: 'Log in', link: 'https://app.apilio.com/redirect_to_auth0', style: 'primary', size: 'lg' }]
 }

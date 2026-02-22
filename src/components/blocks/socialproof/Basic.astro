@@ -8,6 +8,7 @@ import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
 
 // Content
 import tuya from '../../../assets/logos/logo-tuya.svg'
@@ -53,5 +54,17 @@ const { classes } = Astro.props
 				</Col>
 			))
 		}
+		<Col classes="flex items-center justify-center px-4">
+			<div class="flex flex-col items-center gap-1 opacity-60 transition hover:opacity-100">
+				<Icon name="code-bracket" class="h-8 w-8 text-neutral-400 dark:text-neutral-500" />
+				<span class="text-xs font-medium text-neutral-400 dark:text-neutral-500">REST API</span>
+			</div>
+		</Col>
+		<Col classes="flex items-center justify-center px-4">
+			<div class="flex flex-col items-center gap-1 opacity-60 transition hover:opacity-100">
+				<Icon name="bolt" class="h-8 w-8 text-neutral-400 dark:text-neutral-500" />
+				<span class="text-xs font-medium text-neutral-400 dark:text-neutral-500">Webhooks</span>
+			</div>
+		</Col>
 	</Row>
 </Section>

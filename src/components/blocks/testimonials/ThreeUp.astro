@@ -1,0 +1,49 @@
+---
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import Testimonial from '../../ui/Testimonial.astro'
+
+const testimonials = [
+	{
+		blockquote:
+			"Thanks for the service as it currently is — there's no way I could pull this off with raw IFTTT, but with a little ingenuity here I should be able to get pretty close!",
+		figcaption: 'O J Chase'
+	},
+	{
+		blockquote:
+			"More than necessarily happy that I've hacked my TP-Link outside light to switch on automatically if it's after sunset when I arrive home… with a little help from IFTTT and Apilio.",
+		figcaption: '@NudeCyclist'
+	},
+	{
+		blockquote:
+			'I saw your tool linked in a forum discussing ways to better use IFTTT. After some trial and error, I must say that it works great. I thank you so much for this tool, as it scratches my itch for a more robust automation system than IFTTT offers. My only problem is that I now want to purchase more smart devices and figure out how to use them all.',
+		figcaption: 'J Faust'
+	}
+]
+---
+
+<Section classes="bg-neutral-50 dark:bg-neutral-900">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">What our <strong>users</strong> say</h2>
+		</Col>
+	</Row>
+	<Row>
+		{
+			testimonials.map((t) => (
+				<Col span="4" classes="flex">
+					<div class="flex w-full rounded-lg border border-neutral-100 bg-white dark:border-neutral-800 dark:bg-neutral-800/50">
+						<Testimonial
+							blockquote={t.blockquote}
+							figcaption={t.figcaption}
+							align="left"
+							size="sm"
+							quoteSize={48}
+						/>
+					</div>
+				</Col>
+			))
+		}
+	</Row>
+</Section>

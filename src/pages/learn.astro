@@ -1,0 +1,353 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/blocks/hero/PageHeader.astro'
+import CTA from '../components/blocks/CTA/BasicDark.astro'
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+
+import imgLightsSunset from '../assets/use-cases/lights-sunset-motion.jpg'
+import imgHumidity from '../assets/use-cases/humidity-hangar.jpg'
+import imgGarage from '../assets/use-cases/garage-door-alexa.jpg'
+import imgGeofences from '../assets/use-cases/geofences.jpg'
+import imgAirbnb from '../assets/use-cases/airbnb-climate.jpg'
+import imgPresence from '../assets/use-cases/presence-lights.jpg'
+import imgEnergy from '../assets/use-cases/energy-co2.jpg'
+import imgOverride from '../assets/use-cases/override-routine.jpg'
+
+const SEO = {
+	title: 'Apilio | Learn — Use cases, tips & tutorials',
+	description:
+		'Explore real-world smart home automations, step-by-step guides, and video tutorials to get the most out of Apilio.'
+}
+
+const categoryIcons: Record<string, string> = {
+	Lighting: 'light-bulb',
+	Comfort: 'sun',
+	Security: 'shield-check',
+	Control: 'cursor-arrow-ripple'
+}
+
+const categoryColors: Record<string, string> = {
+	Lighting: 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300',
+	Comfort: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300',
+	Security: 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300',
+	Control: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
+}
+
+const useCases = [
+	{
+		category: 'Lighting',
+		title: 'Keep lights on after sunset with motion detection',
+		description:
+			'If your motion sensor detects someone and it is dark outside, turn the lights on and keep them on as long as someone is there.',
+		link: 'https://community.apilio.com/t/keep-lights-on-between-sunset-and-2am-and-on-a-5-minute-detection-timer-until-sunrise/1326',
+		image: imgLightsSunset
+	},
+	{
+		category: 'Comfort',
+		title: 'Control the humidity in an aircraft hangar',
+		description:
+			'Measure indoor and outdoor humidity and only activate the extraction fan if the humidity inside is higher. This setup can be applied to your home too, no airplanes required!',
+		link: 'https://community.apilio.com/t/control-humidity-in-aircraft-hangar/1838',
+		image: imgHumidity
+	},
+	{
+		category: 'Security',
+		title: 'Sonoff garage door opener with Alexa & Siri',
+		description:
+			'Make your home safer using Alexa, Siri and Apilio. Close your garage door automatically or on-demand and reuse the existing devices your family already owns.',
+		link: 'https://community.apilio.com/t/sonoff-garage-door-opener-integrated-with-alexa-siri-and-ring-alarm-with-ring-open-close-sensors/785',
+		image: imgGarage
+	},
+	{
+		category: 'Control',
+		title: 'Small geofences without false positives',
+		description:
+			'Use a 50m radius to trigger routines when you are close to home. Combine Locative and IFTTT thanks to Apilio for great control over your geofences.',
+		link: 'https://community.apilio.com/t/geofences-with-very-small-radius-but-without-false-positives/1709',
+		image: imgGeofences
+	},
+	{
+		category: 'Comfort',
+		title: 'Control temperature and humidity in an Airbnb',
+		description:
+			'Automate climate control at your Airbnb to keep it comfy for your guests, reduce manual operation and minimize your energy consumption for the property.',
+		link: 'https://community.apilio.com/t/control-humidity-and-temperature-in-house/1827',
+		image: imgAirbnb
+	},
+	{
+		category: 'Lighting',
+		title: 'Automatic lights using presence detection and luminosity',
+		description:
+			'Keep the lights on all the time if motion is detected, then turn lights off as soon as possible after no motion.',
+		link: 'https://community.apilio.com/t/auto-lights-on-off-with-no-movement-event-from-pir-sensor-using-2-x-pir-sensors-a-light-level-sensor-and-3-minute-of-no-movement-delay-before-lights-out/1568',
+		image: imgPresence
+	},
+	{
+		category: 'Comfort',
+		title: 'Use pricing and CO2 data to optimise energy usage',
+		description:
+			'Optimise your heating or cooling at home by choosing the best moment considering current prices and CO2 production.',
+		link: 'https://community.apilio.com/t/using-energy-information-to-optimise-your-heating/1309',
+		image: imgEnergy
+	},
+	{
+		category: 'Control',
+		title: 'Overriding an automated routine for several hours',
+		description:
+			'Sometimes you want notifications to stop or pause the regular control of lights. Apilio gives you complete control to override any routine temporarily.',
+		link: 'https://community.apilio.com/t/how-to-override-an-action-for-several-hours/1652',
+		image: imgOverride
+	}
+]
+
+const gettingStarted = [
+	{
+		title: 'An introduction to Apilio',
+		link: 'https://community.apilio.com/t/getting-started-an-introduction-to-apilio/19'
+	},
+	{
+		title: 'Getting started with Apilio and IFTTT',
+		link: 'https://community.apilio.com/t/how-to-connect-apilio-and-ifttt/195'
+	},
+	{
+		title: 'How to choose your variable, trigger and actions',
+		link: 'https://community.apilio.com/t/how-to-choose-your-variable-trigger-and-actions/389'
+	}
+]
+
+const iftttGuides = [
+	{
+		title: 'Updating boolean variables via IFTTT',
+		link: 'https://community.apilio.com/t/how-to-update-a-boolean-variable-via-ifttt/196'
+	},
+	{
+		title: 'Updating numeric variables via IFTTT',
+		link: 'https://community.apilio.com/t/how-to-update-a-numeric-variable-via-ifttt/212'
+	},
+	{
+		title: 'Updating string variables via IFTTT',
+		link: 'https://community.apilio.com/t/how-to-update-a-string-variable-via-ifttt/245'
+	},
+	{
+		title: 'Evaluating logicblocks and triggering actions with IFTTT',
+		link: 'https://community.apilio.com/t/how-to-evaluate-logicblocks-and-trigger-actions-with-ifttt/261'
+	}
+]
+
+const advancedGuides = [
+	{
+		title: 'How conditions work in Apilio',
+		link: 'https://community.apilio.com/t/how-to-use-conditions-in-apilio-to-create-smarter-routines/190'
+	},
+	{
+		title: 'Complex condition linking',
+		link: 'https://community.apilio.com/t/complex-condition-linking/25'
+	},
+	{
+		title: 'Timing with Apilio — How to add a delay to IFTTT actions',
+		link: 'https://community.apilio.com/t/timing-with-apilio-how-to-add-a-delay-to-ifttt-actions/211'
+	},
+	{
+		title: 'IFTTT action — additional value parameters',
+		link: 'https://community.apilio.com/t/ifttt-action-additional-value-parameters/28'
+	},
+	{
+		title: 'Execution modes',
+		link: 'https://community.apilio.com/t/execution-modes/29'
+	}
+]
+
+const videos = [
+	{ title: 'Apilio in a Nutshell', id: 'b43IDbAiO0Q' },
+	{ title: 'How to setup a variable', id: 'AQpQq-d5Fq4' },
+	{ title: 'How to setup a condition', id: 'YexpUEb04Tk' },
+	{ title: 'How to setup a logicblock', id: '7FpL4GpOq6k' },
+	{ title: 'How to add a delay to IFTTT', id: 'rErvi9gSqyE' }
+]
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero
+		title="Learn & get <strong>inspired</strong>"
+		text="Real-world automations from our community, step-by-step guides, and video tutorials."
+	/>
+
+	<!-- Use Cases -->
+	<Section id="use-cases">
+		<Row>
+			<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+				<h2 class="text-pretty">Use <strong>cases</strong></h2>
+				<p class="pb-0 text-lg">
+					Some of our favourite automations shared by the community.
+				</p>
+			</Col>
+		</Row>
+		<Row>
+			{
+				useCases.map((uc) => (
+					<Col span="3" spanMobile="6" classes="flex">
+						<a
+							href={uc.link}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group flex w-full flex-col overflow-hidden rounded-lg border border-neutral-100 transition hover:border-neutral-300 dark:border-neutral-800 dark:hover:border-neutral-600"
+						>
+							<Image
+								src={uc.image}
+								alt={uc.title}
+								widths={[400, 600]}
+								class="aspect-[3/2] w-full object-cover"
+							/>
+							<div class="flex flex-1 flex-col p-4">
+								<div class="mb-2 flex items-center gap-2">
+									<span
+										class:list={[
+											'inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium',
+											categoryColors[uc.category]
+										]}
+									>
+										<Icon name={categoryIcons[uc.category]} class="h-3 w-3" />
+										{uc.category}
+									</span>
+								</div>
+								<h3 class="mb-2 text-base font-medium group-hover:text-primary-600 dark:group-hover:text-primary-400">
+									{uc.title}
+								</h3>
+								<p class="mt-auto text-sm text-neutral-500 dark:text-neutral-400">
+									{uc.description}
+								</p>
+							</div>
+						</a>
+					</Col>
+				))
+			}
+		</Row>
+	</Section>
+
+	<!-- Tips & Guides -->
+	<Section classes="bg-neutral-50 dark:bg-neutral-900" id="guides">
+		<Row>
+			<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+				<h2 class="text-pretty">Tips & <strong>guides</strong></h2>
+				<p class="pb-0 text-lg">
+					Step-by-step guides from the community to help you get started and go further.
+				</p>
+			</Col>
+		</Row>
+		<Row>
+			<Col span="4" classes="mb-8 lg:mb-0">
+				<h3 class="mb-4 text-lg font-medium">Getting started</h3>
+				<ul class="space-y-3">
+					{
+						gettingStarted.map((guide) => (
+							<li>
+								<a
+									href={guide.link}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="group flex items-start gap-2 text-sm text-neutral-600 transition hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
+								>
+									<Icon
+										name="long-arrow-right"
+										class="mt-0.5 h-4 w-4 shrink-0 text-neutral-300 transition group-hover:text-primary-500 dark:text-neutral-600"
+									/>
+									{guide.title}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</Col>
+			<Col span="4" classes="mb-8 lg:mb-0">
+				<h3 class="mb-4 text-lg font-medium">Connecting with IFTTT</h3>
+				<ul class="space-y-3">
+					{
+						iftttGuides.map((guide) => (
+							<li>
+								<a
+									href={guide.link}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="group flex items-start gap-2 text-sm text-neutral-600 transition hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
+								>
+									<Icon
+										name="long-arrow-right"
+										class="mt-0.5 h-4 w-4 shrink-0 text-neutral-300 transition group-hover:text-primary-500 dark:text-neutral-600"
+									/>
+									{guide.title}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</Col>
+			<Col span="4">
+				<h3 class="mb-4 text-lg font-medium">Advanced Apilio</h3>
+				<ul class="space-y-3">
+					{
+						advancedGuides.map((guide) => (
+							<li>
+								<a
+									href={guide.link}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="group flex items-start gap-2 text-sm text-neutral-600 transition hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
+								>
+									<Icon
+										name="long-arrow-right"
+										class="mt-0.5 h-4 w-4 shrink-0 text-neutral-300 transition group-hover:text-primary-500 dark:text-neutral-600"
+									/>
+									{guide.title}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- Video Tutorials -->
+	<Section id="videos">
+		<Row>
+			<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+				<h2 class="text-pretty">Video <strong>tutorials</strong></h2>
+				<p class="pb-0 text-lg">
+					Short videos to walk you through the basics.
+				</p>
+			</Col>
+		</Row>
+		<Row>
+			{
+				videos.map((video) => (
+					<Col span="4" spanMobile="6" classes="mb-6 lg:mb-0">
+						<a
+							href={`https://www.youtube.com/watch?v=${video.id}`}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group block overflow-hidden rounded-lg border border-neutral-100 transition hover:border-neutral-300 dark:border-neutral-800 dark:hover:border-neutral-600"
+						>
+							<img
+								src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
+								alt={video.title}
+								class="aspect-video w-full object-cover"
+								loading="lazy"
+							/>
+							<div class="p-3">
+								<p class="text-sm font-medium group-hover:text-primary-600 dark:group-hover:text-primary-400">
+									{video.title}
+								</p>
+							</div>
+						</a>
+					</Col>
+				))
+			}
+		</Row>
+	</Section>
+
+	<CTA />
+</Layout>
