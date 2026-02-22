@@ -8,7 +8,7 @@
 	{
 		"title": "Complex conditions",
 		"icon": "variable",
-		"description": "Combine multiple conditions with AND, OR, and NOT logic. \"If I'm home AND it's after sunset AND the front door sensor triggered\" — one rule, not three.",
+		"description": "Combine multiple conditions with AND, OR, and NOT logic. \"If I'm home AND it's after sunset AND the front door sensor triggered\".",
 		"category": "Automation Logic"
 	},
 	{
@@ -20,7 +20,7 @@
 	{
 		"title": "Multiple actions",
 		"icon": "numbered-list",
-		"description": "One rule can control several devices and services at once. Turn on the lights, adjust the thermostat, and send a notification — all from one trigger.",
+		"description": "One rule can control several devices and services at once. Turn on the lights, adjust the thermostat, and send a notification — with a delay if you want.",
 		"category": "Automation Logic"
 	},
 	{
@@ -74,7 +74,7 @@
 	{
 		"title": "Device-centric dashboard",
 		"icon": "computer-desktop",
-		"description": "Devices are the primary entry point. See all your hardware at a glance, grouped by room, project, or integration.",
+		"description": "Devices are the primary entry point. See all your hardware at a glance and organize them with tags.",
 		"category": "Devices"
 	},
 	{
@@ -110,7 +110,7 @@
 	{
 		"title": "Override",
 		"icon": "pause-circle",
-		"description": "Temporarily disable automations. Hosting a party? One toggle pauses all your lighting routines until you re-enable them.",
+		"description": "Temporarily disable automations. Hosting a party? One toggle pauses a Logicblock until you re-enable it.",
 		"category": "Execution Modes"
 	},
 	{
@@ -128,7 +128,7 @@
 	{
 		"title": "Email notifications",
 		"icon": "envelope",
-		"description": "Get notified when specific logicblocks fire or conditions change. Up to 300 emails/month on higher plans.",
+		"description": "Add notifications to your Logicblock actions and get notified by Email when specific logicblocks fire.",
 		"category": "Monitoring & Notifications"
 	},
 	{

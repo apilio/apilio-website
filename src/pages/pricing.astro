@@ -8,7 +8,32 @@ import CTA from '../components/blocks/CTA/BasicDark.astro'
 import Section from '../components/ui/Section.astro'
 import Row from '../components/ui/Row.astro'
 import Col from '../components/ui/Col.astro'
-import Button from '../components/ui/Button.astro'
+import { Icon } from 'astro-icon/components'
+
+const plans = ['Essential', 'Home', 'Advanced', 'Pro', 'Extra']
+const prices = ['$1.50', '$2.40', '$2.90', '$3.90', '$6.90']
+const featured = [false, false, true, false, false]
+
+const limits = [
+	{ label: 'Logicblocks', values: ['3', '10', '10', '50', '350'] },
+	{ label: 'Variables & conditions', values: ['Up to 50', 'Up to 50', 'Up to 50', 'Up to 50', 'Up to 350'] },
+	{ label: 'Email notifications/month', values: ['50', '50', '300', '300', '300'] },
+	{ label: 'Event log retention', values: ['Latest week', 'Latest week', 'Latest month', 'Latest month', 'Latest month'] }
+]
+
+const features = [
+	{ label: 'Action delays', included: [true, true, true, true, true] },
+	{ label: 'IFTTT integration', included: [true, true, true, true, true] },
+	{ label: 'Tuya / Smart Life integration', included: [true, true, true, true, true] },
+	{ label: 'Philips Hue integration', included: [true, true, true, true, true] },
+	{ label: 'Webhook actions', included: [true, true, true, true, true] },
+	{ label: 'Passing additional values to IFTTT', included: [false, false, true, true, true] },
+	{ label: 'Complex condition linking', included: [false, false, true, true, true] },
+	{ label: 'Execution modes', included: [false, false, true, true, true] },
+	{ label: 'CSV export of event logs', included: [false, false, true, true, true] },
+	{ label: 'Cron time conditions', included: [false, false, true, true, true] },
+	{ label: 'REST API', included: [false, false, true, true, true] }
+]
 
 // SEO
 const SEO = {
@@ -26,38 +51,92 @@ const SEO = {
 
 	<Price />
 
-	<!-- Additional plans -->
+	<!-- Plan comparison table -->
 	<Section>
 		<Row>
-			<Col span="12" align="center" classes="mb-8">
-				<h2 class="text-pretty text-2xl">More <strong>options</strong></h2>
+			<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+				<h2 class="text-pretty">Compare <strong>plans</strong></h2>
 			</Col>
 		</Row>
 		<Row>
-			<Col span="6">
-				<div class="rounded-lg border border-neutral-100 bg-white p-8 shadow-lg shadow-neutral-700/5 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-neutral-950/50">
-					<h3 class="mb-1 text-xl font-bold text-neutral-700 dark:text-neutral-50">Home</h3>
-					<p class="mb-4 text-sm text-neutral-400">Between Essential and Advanced</p>
-					<p class="mb-4 text-4xl font-bold text-neutral-700 dark:text-neutral-50">
-						<span class="text-2xl">$</span>2.40<span class="text-sm font-normal text-neutral-400">/month</span>
-					</p>
-					<p class="mb-6 text-neutral-500 dark:text-neutral-400">
-						10 logicblocks, 50 variables & conditions. All Essential features — more room to grow.
-					</p>
-					<Button style="primary" link="https://app.apilio.com/">Start free trial</Button>
-				</div>
-			</Col>
-			<Col span="6">
-				<div class="rounded-lg border border-neutral-100 bg-white p-8 shadow-lg shadow-neutral-700/5 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-neutral-950/50">
-					<h3 class="mb-1 text-xl font-bold text-neutral-700 dark:text-neutral-50">Extra</h3>
-					<p class="mb-4 text-sm text-neutral-400">Maximum capacity</p>
-					<p class="mb-4 text-4xl font-bold text-neutral-700 dark:text-neutral-50">
-						<span class="text-2xl">$</span>6.90<span class="text-sm font-normal text-neutral-400">/month</span>
-					</p>
-					<p class="mb-6 text-neutral-500 dark:text-neutral-400">
-						350 logicblocks, 350 variables & conditions. All Advanced features at the highest limits.
-					</p>
-					<Button style="primary" link="https://app.apilio.com/">Start free trial</Button>
+			<Col span="12">
+				<div class="overflow-x-auto rounded-lg border border-neutral-100 dark:border-neutral-800">
+					<table class="w-full text-sm">
+						<!-- Header row with plan names and prices -->
+						<thead>
+							<tr class="border-b border-neutral-100 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900">
+								<th class="px-4 py-4 text-left font-normal text-neutral-400"></th>
+								{plans.map((plan, i) => (
+									<th class:list={[
+										'px-4 py-4 text-center',
+										featured[i] ? 'bg-primary-500 text-white' : ''
+									]}>
+										<div class="text-base font-bold">{plan}</div>
+										<div class:list={[
+											'text-lg font-bold',
+											featured[i] ? 'text-white' : 'text-neutral-700 dark:text-neutral-50'
+										]}>
+											{prices[i]}<span class:list={[
+												'text-xs font-normal',
+												featured[i] ? 'text-primary-200' : 'text-neutral-400'
+											]}>/mo</span>
+										</div>
+									</th>
+								))}
+							</tr>
+						</thead>
+						<tbody>
+							<!-- Limits section header -->
+							<tr class="border-b border-neutral-100 dark:border-neutral-800">
+								<td colspan="6" class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-neutral-400">
+									Plan limits
+								</td>
+							</tr>
+							{limits.map((row) => (
+								<tr class="border-b border-neutral-50 dark:border-neutral-800/50">
+									<td class="px-4 py-3 text-neutral-600 dark:text-neutral-300">{row.label}</td>
+									{row.values.map((val, i) => (
+										<td class:list={[
+											'px-4 py-3 text-center font-medium',
+											featured[i]
+												? 'bg-primary-50/50 text-primary-700 dark:bg-primary-900/10 dark:text-primary-300'
+												: 'text-neutral-700 dark:text-neutral-200'
+										]}>
+											{val}
+										</td>
+									))}
+								</tr>
+							))}
+							<!-- Features section header -->
+							<tr class="border-b border-neutral-100 dark:border-neutral-800">
+								<td colspan="6" class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-neutral-400">
+									Features
+								</td>
+							</tr>
+							{features.map((row) => (
+								<tr class="border-b border-neutral-50 dark:border-neutral-800/50">
+									<td class="px-4 py-3 text-neutral-600 dark:text-neutral-300">{row.label}</td>
+									{row.included.map((inc, i) => (
+										<td class:list={[
+											'px-4 py-3 text-center',
+											featured[i] ? 'bg-primary-50/50 dark:bg-primary-900/10' : ''
+										]}>
+											{inc ? (
+												<Icon name="check-circle" class:list={[
+													'mx-auto h-5 w-5',
+													featured[i]
+														? 'text-primary-500'
+														: 'text-emerald-500 dark:text-emerald-400'
+												]} />
+											) : (
+												<span class="text-neutral-300 dark:text-neutral-600">—</span>
+											)}
+										</td>
+									))}
+								</tr>
+							))}
+						</tbody>
+					</table>
 				</div>
 			</Col>
 		</Row>

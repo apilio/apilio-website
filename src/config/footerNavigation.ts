@@ -71,7 +71,7 @@ export const footerNavigationData: FooterData = {
 				},
 				{
 					subCategory: 'Documentation',
-					subCategoryLink: 'https://community.apilio.com/docs'
+					subCategoryLink: 'https://community.apilio.com/c/getting-started/10'
 				},
 				{
 					subCategory: 'API Docs',
