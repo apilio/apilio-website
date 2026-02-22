@@ -33,24 +33,48 @@ const { classes } = Astro.props
 		<Col span="8">
 			<Card classes="divide-y divide-neutral-100 dark:divide-neutral-800">
 				<Accordion
-					title="Is there a free trial?"
-					text="Yes — 21 days of full access, no credit card required. Try every feature before you decide."
+					title="What is a logicblock?"
+					text="A logicblock is a combination of conditions and actions you create on Apilio to automate something. Conditions determine when actions execute — like triggering when it’s nighttime or temperature drops below 20°C. Actions represent outcomes such as controlling smart lights or heating systems."
 				/>
 				<Accordion
-					title="Can I change plans anytime?"
-					text="Yes, you can upgrade or downgrade your plan at any time with a single click. Changes take effect immediately."
+					title="How frequently does Apilio process my events?"
+					text="All plans process events every second. If your rate is higher than this, we might have to pause the offending logicblock to investigate."
+				/>
+				<Accordion
+					title="How many variables and conditions can I have?"
+					text="Each plan includes a maximum number of active logicblocks, variables, and conditions. You can always save additional ones as inactive and swap them in when needed."
+				/>
+				<Accordion
+					title="What happens when I reach the maximum number of active logicblocks?"
+					text="Additional logicblocks will be saved as inactive. You can activate different ones by deactivating others, or upgrade your plan for more capacity."
+				/>
+				<Accordion
+					title="Is there a free trial?"
+					text="Yes — 21 days of full access, no credit card required. Try every feature before you decide. If you need more time, just get in touch and we’ll extend it for you."
+				/>
+				<Accordion
+					title="Will I be charged when the trial ends?"
+					text="No, you won’t be charged unless you choose to subscribe to one of the plans. No credit card is required to start your trial."
 				/>
 				<Accordion
 					title="What happens after the trial?"
 					text="Choose a plan to continue using Apilio. If you don’t subscribe, your account stays inactive for one month before being deleted."
 				/>
 				<Accordion
+					title="What happens if I don’t renew my plan?"
+					text="Your account will be deactivated — IFTTT updates and actions will stop. Your configuration stays for one month before deletion, so you can resubscribe without losing your setup."
+				/>
+				<Accordion
+					title="Can I cancel anytime?"
+					text="Yes, you can cancel anytime with just a click. You can also upgrade or downgrade your plan at any time."
+				/>
+				<Accordion
 					title="Do you offer refunds?"
-					text="Payments are non-refundable, but unused time can be converted to account credits. Get in touch if you need help."
+					text="Subscriptions are non-refundable, but we can convert unused time into credit for a new plan if you want to change tiers. Get in touch if you need help."
 				/>
 				<Accordion
 					title="Discounts for charities or education?"
-					text="Yes — we offer special pricing for charities and educational institutions. Contact us at hello@apilio.com to learn more."
+					text="Please get in touch — we’d like to support you if possible. Contact us at hello@apilio.com."
 				/>
 			</Card>
 		</Col>
