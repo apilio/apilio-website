@@ -6,11 +6,11 @@ Rebuild of apilio.com using the Foxi Astro theme. Replaces the existing Webflow 
 
 - **Framework:** Astro 5.x (static site generator)
 - **Styling:** Tailwind CSS 3.x with Typography plugin
-- **Fonts:** Inter Variable (body), Outfit Variable (headings)
-- **Icons:** astro-icon with 90+ SVG icons in `src/icons/`
-- **Images:** Sharp for optimization
-- **Analytics:** Google Analytics / Tag Manager ready (via Partytown)
-- **Hosting:** Vercel (free tier, `@astrojs/vercel` adapter included)
+- **Fonts:** Roboto Variable (body), Open Sans Variable (headings)
+- **Icons:** astro-icon with 90+ local SVG icons in `src/icons/`
+- **Images:** Sharp for optimisation
+- **Analytics:** Google Analytics via Partytown (env var `PUBLIC_GA_TRACKING_ID`)
+- **Hosting:** Vercel (git integration, main branch → production)
 - **Template:** [Foxi Astro Theme](https://github.com/oxygenna-themes/foxi-astro-theme)
 
 ## Commands
@@ -19,81 +19,74 @@ Rebuild of apilio.com using the Foxi Astro theme. Replaces the existing Webflow 
 npm run dev       # Start dev server
 npm run build     # Type-check + build to dist/
 npm run preview   # Preview production build locally
+vercel --prod --yes  # Deploy to production from CLI
 ```
 
 ## Project Structure
 
 ```
 src/
-├── assets/          # Images (avatars, cards, highlights, logos, backgrounds)
+├── assets/          # Images (logos, highlights, hero screenshot, webflow assets)
 ├── components/
 │   ├── blocks/      # Page-level sections (hero, features, pricing, CTA, etc.)
+│   ├── scripts/     # Analytics scripts (GA, GTM)
 │   └── ui/          # Reusable UI components (Button, Card, Form, Modal, etc.)
 ├── config/          # Site-wide configuration
 │   ├── config.ts          # Site title, description, OG image, logo, mode
 │   ├── navigationBar.ts   # Header navigation items + CTA
 │   ├── footerNavigation.ts # Footer columns + copyright
 │   ├── socialLinks.ts     # Social media links
-│   └── analytics.ts       # GA / GTM IDs
-├── content/blog/    # Blog posts (Markdown with frontmatter)
+│   └── analytics.ts       # GA / GTM IDs (reads PUBLIC_GA_TRACKING_ID env var)
 ├── data/json-files/ # Structured content data
-│   ├── pricingTablesdata.json  # 3 pricing tiers
-│   ├── featuresData.json       # 40+ features in 5 categories
-│   ├── faqData.json            # 21 FAQs grouped by category
-│   └── changelogData.json      # Version history
-├── data/markdown-files/
-│   └── terms.md     # Terms of service
-├── icons/           # SVG icons (90+)
+│   ├── pricingTablesdata.json  # 3 main pricing tiers
+│   ├── featuresData.json       # 27 features in 6 categories
+│   └── pricingFaqData.json     # Pricing FAQ
+├── icons/           # Local SVG icons (Heroicons)
 ├── layouts/
-│   ├── Layout.astro      # Main page layout
-│   └── PostLayout.astro  # Blog post layout
+│   └── Layout.astro      # Main page layout
 ├── pages/           # Routes (see below)
 └── styles/
     └── global.css   # Tailwind directives, dark mode, animations
 public/
-├── blog/            # Blog post images
-├── feeds/           # Changelog images
 ├── favicon.svg
 ├── logo.svg
+├── logo-full.png    # Brand logo with text
 └── og.jpg           # Open Graph social image
 ```
 
-## Pages / Routes
+## Active Pages
 
 | Route | File | Description |
 |-------|------|-------------|
-| `/` | `pages/index.astro` | Home — hero, features, testimonials, highlights, CTA |
-| `/pricing` | `pages/pricing.astro` | Pricing tables, social proof, FAQ, CTA |
-| `/features` | `pages/features.astro` | Feature categories with sticky scroll sections |
-| `/faq` | `pages/faq.astro` | FAQ sections with text/image blocks |
-| `/contact` | `pages/contact.astro` | Contact form, contact cards, social proof |
-| `/changelog` | `pages/changelog.astro` | Version history feed |
-| `/terms` | `pages/terms.astro` | Terms & conditions with sidebar nav |
-| `/blog` | `pages/blog/index.astro` | Blog post listing |
-| `/blog/[id]` | `pages/blog/[...id].astro` | Individual blog posts |
-| `/blog/tags/[tag]` | `pages/blog/tags/[tag].astro` | Posts filtered by tag |
-| `/404` | `pages/404.astro` | Custom error page |
+| `/` | `pages/index.astro` | Home — hero, integration logos, how it works, benefits, highlights, CTA |
+| `/features` | `pages/features.astro` | 6 feature categories with sticky scroll sections |
+| `/integrations` | `pages/integrations.astro` | Native integrations, webhooks/API, IFTTT brands, hubs |
+| `/pricing` | `pages/pricing.astro` | Pricing cards, comparison table, FAQ, CTA |
+| `/learn` | `pages/learn.astro` | Use case cards linking to community tutorials |
+| `/about` | `pages/about.astro` | Team, story, community, location |
+| `/terms` | `pages/terms.astro` | Terms & Conditions (verbatim from original, May 2019) |
+| `/privacy` | `pages/privacy.astro` | Privacy Policy (verbatim from original, May 2019) |
+| `/404` | `pages/404.astro` | Error page |
+
+## Unused Foxi Pages (still present, not linked)
+
+`/blog`, `/changelog`, `/faq`, `/contact` — template pages not removed yet.
 
 ## Theming
 
-- **Primary color:** `#E2187D` (pink) — defined in `tailwind.config.mjs`
-- **Neutral palette:** Slate-based
-- **Dark mode:** Selector-based, toggleable (auto/light/dark via `config.ts`)
-- **Animations:** fadeUp, fadeInShadow, dropdown (Tailwind config)
+- **Primary colour:** `#FFC400` (amber/gold)
+- **Neutral palette:** Blue Grey based on `#455A64`
+- **Accent:** `#003BFF`
+- **Dark mode:** Selector-based, toggleable (auto/light/dark)
+
+## Content Guidelines
+
+- All website copy uses **British English** (organise, authorise, minimise, metre, etc.)
+- Legal pages (terms, privacy) are verbatim from the original Webflow site — spelling corrections to British English are the only allowed changes
+- Don't name specific brands in generic benefit descriptions
 
 ## TODO
 
-- [ ] Logo text font: Roboto Slab doesn't match the original Apilio brand typeface — identify the correct font (thin serif used in `Logo/` assets) and replace `font-logo` in Tailwind config
-
-## Customization Checklist
-
-- [ ] Update site config (`src/config/config.ts`) — title, description, logo
-- [ ] Replace colors in `tailwind.config.mjs` with Apilio brand colors
-- [ ] Update navigation (`src/config/navigationBar.ts`, `footerNavigation.ts`)
-- [ ] Replace content in JSON data files (`src/data/json-files/`)
-- [ ] Update or remove blog posts (`src/content/blog/`)
-- [ ] Replace images and logo (`public/`, `src/assets/`)
-- [ ] Set up analytics (`src/config/analytics.ts`)
-- [ ] Update `astro.config.mjs` site URL
-- [ ] Remove unneeded pages/sections
-- [ ] Create GitHub repo and connect to Vercel
+- [ ] Remove unused Foxi pages: `/blog`, `/changelog`, `/faq`, `/contact`
+- [ ] Assets: Favicon (`public/favicon.svg`), OG image (`public/og.jpg`)
+- [ ] Hero background: Improve dark bg with radial glow + watermark logo
