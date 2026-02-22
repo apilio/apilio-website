@@ -2,7 +2,7 @@
 	{
 		"title": "Logicblocks",
 		"icon": "rectangle-stack",
-		"description": "The core building block. Each logicblock combines conditions and actions into a single automation rule. Name them, tag them, organize them by room or project.",
+		"description": "The core building block. Each logicblock combines conditions and actions into a single automation rule. Name them, tag them, organise them by room or project.",
 		"category": "Automation Logic"
 	},
 	{
@@ -74,7 +74,7 @@
 	{
 		"title": "Device-centric dashboard",
 		"icon": "computer-desktop",
-		"description": "Devices are the primary entry point. See all your hardware at a glance and organize them with tags.",
+		"description": "Devices are the primary entry point. See all your hardware at a glance and organise them with tags.",
 		"category": "Devices"
 	},
 	{
@@ -158,7 +158,7 @@
 	{
 		"title": "Outgoing webhooks",
 		"icon": "arrow-up-tray",
-		"description": "When actions fire, Apilio can send HTTP requests to any URL. Custom headers, body, and authorization. Variable values injected into requests.",
+		"description": "When actions fire, Apilio can send HTTP requests to any URL. Custom headers, body, and authorisation. Variable values injected into requests.",
 		"category": "REST API & Webhooks"
 	}
 ]
