@@ -1,5 +1,11 @@
 [
 	{
+		"title": "ChatGPT integration",
+		"icon": "sparkles",
+		"description": "Describe your automation in plain language and let ChatGPT set it up for you. The official Apilio MCP server gives AI assistants direct access to your logicblocks and variables.",
+		"category": "Automation Logic"
+	},
+	{
 		"title": "Logicblocks",
 		"icon": "rectangle-stack",
 		"description": "The core building block. Each logicblock combines conditions and actions into a single automation rule. Name them, tag them, organise them by room or project.",
